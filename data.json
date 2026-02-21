@@ -22,7 +22,7 @@
     "nama": "Aldiansyah Sitorus",
     "kelas": "XII IIS-1",
     "pesan": "Kegagalan adalah kesuksesan yang tertunda, jadi jangan pernah menyerah!",
-    "foto": "/galeri/img/Aldiansyah Sitorus.svg",
+    "foto": "galeri/img/Aldiansyah Sitorus.svg",
     "bio": "jangan pernah menyerah, karena kegagalan adalah kesuksesan yang tertunda. jadi teruslah berusaha dan jangan pernah menyerah!"
   },
   {
@@ -30,7 +30,7 @@
     "nama": "Alfira Khairani",
     "kelas": "XII IIS-1",
     "pesan": "Maju terus pantang mundur!",
-    "foto": "/galeri/img/Alfira Khairani.svg",
+    "foto": "galeri/img/Alfira Khairani.svg",
     "bio": "Andi ahli dalam matematika dan sering membantu teman."
   },
   {
@@ -38,7 +38,7 @@
     "nama": "Alfredo Johannes Halomoan",
     "kelas": "XII IIS-1",
     "pesan": "Maju terus pantang mundur!",
-    "foto": "/galeri/img/Alfredo Johannes Halomoan.svg",
+    "foto": "galeri/img/Alfredo Johannes Halomoan.svg",
     "bio": "Andi ahli dalam matematika dan sering membantu teman."
   },
   {
@@ -46,7 +46,7 @@
     "nama": "Aqila Zahwa",
     "kelas": "XII IIS-1",
     "pesan": "Maju terus pantang mundur!",
-    "foto": "/galeri/img/Aqila Zahwa.svg",
+    "foto": "galeri/img/Aqila Zahwa.svg",
     "bio": "Andi ahli dalam matematika dan sering membantu teman."
   },
   {
@@ -54,7 +54,7 @@
     "nama": "Asyfa Fawwaz Sembiring",
     "kelas": "XII IIS-1",
     "pesan": "Maju terus pantang mundur!",
-    "foto": "/galeri/img/Asyfa Fawwaz Sembiring.svg",
+    "foto": "galeri/img/Asyfa Fawwaz Sembiring.svg",
     "bio": "Andi ahli dalam matematika dan sering membantu teman."
   },
   {
@@ -62,7 +62,7 @@
     "nama": "Bilqis Angel Khalila Azzahra",
     "kelas": "XII IIS-1",
     "pesan": "Maju terus pantang mundur!",
-    "foto": "/galeri/img/Bilqis Angel Khalila Azzahra.svg",
+    "foto": "galeri/img/Bilqis Angel Khalila Azzahra.svg",
     "bio": "Andi ahli dalam matematika dan sering membantu teman."
   }, 
   {
@@ -70,7 +70,7 @@
     "nama": "Carisa Putri Adila",
     "kelas": "XII IIS-1",
     "pesan": "Maju terus pantang mundur!",
-    "foto": "/galeri/img/Carisa Putri Adila.svg",
+    "foto": "galeri/img/Carisa Putri Adila.svg",
     "bio": "Andi ahli dalam matematika dan sering membantu teman."
   },
   {
@@ -78,7 +78,7 @@
     "nama": "Dava Triawan",
     "kelas": "XII IIS-1",
     "pesan": "Maju terus pantang mundur!",
-    "foto": "/galeri/img/Dava Triawan.svg",
+    "foto": "galeri/img/Dava Triawan.svg",
     "bio": "Andi ahli dalam matematika dan sering membantu teman."
   }
 ]
