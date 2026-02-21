@@ -8,6 +8,7 @@
 body {
     margin: 0;
     padding: 0;
+    font-size: 20px;
     background: #3d2b1f url('https://www.transparenttextures.com/patterns/cardboard-flat.png');
     font-family: 'Patrick Hand', cursive;
     color: var(--text);
