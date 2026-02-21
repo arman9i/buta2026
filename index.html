@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory 2026 | Digital Scrapbook</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Indie+Flower&family=Patrick+Hand&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio id="paperSound" src="/Galeri/kilat.mp3" preload="auto"></audio>
+    <audio id="bgMusic" src="/Galeri/Sampai Jumpa - Endank Soekamti.mp3" loop></audio>
+
+<div class="music-control" onclick="toggleMusic()">
+    <div id="musicIcon">🎵</div>
+    <span class="music-text">Play Music</span>
+</div>
+
+<div id="profileModal" class="modal">
+    <div class="modal-content scrapbook-paper">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div id="modalData" class="modal-body">
+            </div>
+    </div>
+</div>
+
+    <div class="book-wrapper">
+        <section id="page1" class="page active">
+            <div class="notebook-cover" onclick="nextPage(2)">
+                <div class="binding"></div>
+                <div class="tape-decoration"></div>
+                <div class="cover-content">
+                    <h1 class="sub-title">XII IIS-1 Angkatan 2026</h1>
+                </div>
+            </div>
+            <div class="page-content">
+                <span class="floating-deco" style="position:absolute; top:20px; right:20px; font-size:40px;">✨</span>
+                <span class="floating-deco" style="position:absolute; bottom:50px; left:10px; font-size:30px; animation-delay: 1s;">🎨</span>
+                <span class="floating-deco" style="position:absolute; top:50%; left:-20px; font-size:35px; animation-delay: 0.5s;">📎</span>
+            </div>
+        </section>
+
+        <section id="page2" class="page">
+            <header class="scrap-header">
+                <button class="btn-scrap" onclick="nextPage(1)">← Tutup</button>
+                <input type="text" id="searchBar" placeholder="Cari sahabat..." onkeyup="searchAlumni()">
+                <button class="btn-scrap" onclick="nextPage(3)">Kenangan →</button>
+            </header>
+            <h2 class="page-title">Kelas XII IIS-1 ini ya.......</h2>
+            <div id="alumniList" class="scrapbook-grid">
+                </div>
+        </section>
+
+        <section id="page3" class="page">
+            <header class="scrap-header">
+                <button class="btn-scrap" onclick="nextPage(2)">← Alumni</button>
+                <button class="btn-scrap" onclick="nextPage(4)">Galeri →</button>
+            </header>
+            <div class="scrap-container">
+                <div class="diary-entry">
+                    <h2 class="page-title">Kenangan Sekolah</h2>
+                    <p>"Tiga tahun sudah kita ukir bersama di sekolah ini. Tiga tahun penuh tawa, tangis, dan kenangan yang takkan pudar. Rasanya baru kemarin kita bertemu, kini kita harus berpisah. Perpisahan ini memang menyakitkan, meninggalkan lubang di hati yang terisi oleh kebersamaan kita.
+                        Tapi ingatlah, perpisahan ini bukan akhir, melainkan awal dari babak baru dalam hidup kita. Mungkin jalan kita akan berbeda, mungkin kita akan jarang bertemu. Namun, ikatan persahabatan kita akan tetap terjalin erat.
+                        Masa depan membentang luas di hadapan kita. Aku tahu, mungkin ada di antara kita yang merasa cemas dengan tantangan ekonomi, dengan biaya pendidikan yang tinggi. Tapi jangan pernah menyerah! Jangan biarkan keadaan ekonomi orang tua menjadi penghalang mimpimu. Ingatlah perjuangan orang tua kita, mereka ingin melihat kita sukses.
+                        Teruslah berjuang, kejar impianmu setinggi langit. Buktikan pada dunia bahwa kita bisa! Kita akan bertemu lagi suatu saat nanti, dengan cerita sukses masing-masing. Sampai jumpa, teman-teman terbaikku!"</p>
+                    <div class="gallery-container-2">
+                        <div class="polaroid-2" style="--r:-3deg"><img src="https://picsum.photos/200/201" alt="Foto"><p>Salam Perjuangan</p></div>
+                        <div class="polaroid-2" style="--r:2deg"><img src="https://picsum.photos/200/201" alt="Foto"><p>Kita tetap Saudara</p></div>
+                    </div>
+                        
+                    <div class="sticker doodle">✨</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page4" class="page">
+            <header class="scrap-header">
+                <button class="btn-scrap" onclick="nextPage(3)">← Kembali</button>
+                <button class="btn-scrap" onclick="nextPage(5)">Pesan Guru →</button>
+            </header>
+            <h2 class="page-title">Potret Kenangan</h2>
+            <div class="gallery-container-1">
+                <div class="gallery-container">
+                    <div class="polaroid-3" onclick="showGalleryDetail('https://picsum.photos/400/300', 'Kantin Sekolah', 'Tempat favorit kita bolos kalau jam kosong. Mie ayam Pak Kumis tak tertandingi!')">
+                        <img src="https://picsum.photos/400/300" alt="Momen 1">
+                        <p>Kantin Sekolah</p>
+                    </div>
+
+                    <div class="polaroid-3" onclick="showGalleryDetail('https://picsum.photos/400/301', 'Lapangan Basket', 'Final DBL 2025, momen haru saat kita juara 2 tapi tetap bangga.')">
+                        <img src="https://picsum.photos/400/301" alt="Momen 2">
+                        <p>Lapangan Basket</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+
+        <section id="page5" class="page">
+            <header class="scrap-header">
+                <button class="btn-scrap" onclick="nextPage(3)">← Kembali</button>
+                <button class="btn-scrap" onclick="nextPage(7)">Peta Sekolah →</button>
+            </header>
+            <h2 class="page-title">Pesan & Kesan Guru</h2>
+            <div class="teacher-note">
+                <div class="pin"></div>
+                <blockquote>"Jadilah bintang yang paling terang di langitmu sendiri. Jangan pernah lupa pulang ke rumah ini."</blockquote>
+                <cite>- Bapak Ahmad (Kepala Sekolah)</cite>
+                <br><br>
+                <blockquote>"Anak-anakku tersayang,<br>
+                Tiga tahun lalu, kalian datang ke kelas ini dengan wajah malu-malu dan seragam yang masih sangat rapi. Hari ini, Ibu melihat kalian berdiri di sini sebagai pribadi yang jauh lebih dewasa. 
+                Melihat kalian bersalaman untuk berpisah hari ini sungguh menyesakkan dada, karena bagi Ibu, kalian bukan sekadar nama di buku absen, melainkan keluarga.<br>
+                Ibu tahu, di balik tawa kalian hari ini, ada kekhawatiran tentang hari esok. Ada yang mungkin merasa jalannya tertutup karena keterbatasan ekonomi keluarga. Dengarkan pesan Ibu:
+                <ol> 
+                    <li>
+                        <strong>Ekonomi bukan penentu takdir:</strong> Jangan pernah jadikan kondisi keuangan orang tua sebagai alasan untuk berhenti bermimpi. Banyak jalan menuju Roma, dan banyak beasiswa bagi mereka yang mau berusaha.
+                    </li>
+                    <li>
+                        <strong>Kehormatan Orang Tua: </strong>Cara terbaik kalian membalas keringat ayah dan air mata ibu adalah dengan tidak menyerah pada keadaan. Pendidikan adalah tangga untuk mengangkat derajat keluarga kalian.
+                    </li>
+                    <li>
+                        <strong>Teruslah Melangkah: </strong>Dunia di luar sana mungkin keras, tapi ingatlah bahwa kalian telah berhasil melewati tiga tahun yang hebat di sini. Kalian lebih kuat dari yang kalian bayangkan.
+                    </li>
+                </ol>
+                Perpisahan ini hanyalah jeda untuk kalian menjemput kesuksesan masing-masing. Pergilah, kejar pendidikan setinggi-tingginya. Jangan biarkan dompet yang kosong menghentikan otak yang cerdas dan tekad yang baja.
+                Selamat berjuang, Anak-anakku. Doa Ibu selalu menyertai setiap langkah kalian.."</blockquote>
+                <cite>- Ibu Dwi Kurniati (Wali Kelas-Mu)</cite>
+                <div class="gallery-container-3">
+                        <div class="polaroid-3" style="--r:-3deg"><img src="/Galeri/img/Dwi Kurniati-3.png" alt="Foto"><p>Salam Perjuangan</p></div>
+                </div>
+                <button class="nav-btn" onclick="nextPage(6)">Lihat Wall of Fame</button>
+            </div>
+        </section>
+
+        <section id="page6" class="page">
+    <div class="scrapbook-paper page-content">
+        <h2 class="page-title">🏆 Wall of Fame 🏆</h2>
+        
+        <div class="wall-of-fame-grid">
+            <div class="award-card" style="--r: -2deg">
+                <div class="badge">🥇</div>
+                <h3>Si Paling Rajin</h3>
+                <p><strong>Andi Wijaya</strong></p>
+            </div>
+            <div class="award-card" style="--r: 3deg">
+                <div class="badge">😴</div>
+                <h3>Duta Tidur</h3>
+                <p><strong>Budi Santoso</strong></p>
+            </div>
+            <div class="award-card" style="--r: -1deg">
+                <div class="badge">🎸</div>
+                <h3>Rockstar Kelas</h3>
+                <p><strong>Siti Aminah</strong></p>
+            </div>
+            <div class="award-card" style="--r: 2deg">
+                <div class="badge">📸</div>
+                <h3>Si Paling Eksis</h3>
+                <p><strong>Santi Diana</strong></p>
+            </div>
+            <div class="award-card" style="--r: -2deg">
+                <div class="badge">🥇</div>
+                <h3>Si Raja Terlambat</h3>
+                <p><strong>Meira Lesmana</strong></p>
+            </div>
+            <div class="award-card" style="--r: 3deg">
+                <div class="badge">😴</div>
+                <h3>Paling Cerewet</h3>
+                <p><strong>Caca</strong></p>
+            </div>
+            <div class="award-card" style="--r: -1deg">
+                <div class="badge">🎸</div>
+                <h3>Politikus Ulung</h3>
+                <p><strong>Siti Aminah</strong></p>
+            </div>
+            <div class="award-card" style="--r: 2deg">
+                <div class="badge">📸</div>
+                <h3>Si Paling Pemalu</h3>
+                <p><strong>Santi Diana</strong></p>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-top: 30px;">
+            <button class="nav-btn" onclick="nextPage(5)">Kembali</button>
+            <button class="nav-btn" onclick="nextPage(1)">Ke Sampul</button>
+        </div>
+    </div>
+        </section>
+
+    <section id="page7" class="page">
+    <div class="scrapbook-paper page-content">
+        <header class="scrap-header">
+                <button class="btn-scrap" onclick="nextPage(5)">← Kembali</button>
+        </header>
+        <h2 class="page-title">Peta Kenangan</h2>
+        <p style="text-align:center;">Klik ikon untuk melihat momen di tempat itu!</p>
+
+        <div class="map-wrapper">
+            <img src="Galeri/denah_sekolah.JPG" class="base-map" alt="Denah Sekolah">
+
+            <div class="marker kantin" onclick="showGalleryDetail('Galeri/kantin.JPG', 'Kantin', 'Tempat sejuta cerita dan gorengan hangat.')">
+                <span class="icon">🍜</span>
+                <span class="label">Kantin</span>
+            </div>
+
+            <div class="marker lapangan" onclick="showGalleryDetail('Galeri/lapangan.JPG', 'Lapangan', 'Saksi bisu perjuangan tim basket kita.')">
+                <span class="icon">🏀</span>
+                <span class="label">Lapangan</span>
+            </div>
+            
+            <div class="marker perpus" onclick="showGalleryDetail('Galeri/pustaka.JPG', 'Perpustakaan', 'Tempat paling adem buat tidur siang.')">
+                <span class="icon">📚</span>
+                <span class="label">Perpus</span>
+            </div>
+        </div>
+
+    </div>
+    </section>
+
+    </div>
+
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalData"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
