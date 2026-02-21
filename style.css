@@ -31,7 +31,7 @@ body {
 
 /* COVER STYLE */
 .notebook-cover {
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/Galeri/cover.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/galeri/cover.jpg');
     width: 90%; max-width: 500px; height: 700px;
     margin: 40px auto;
     border-radius: 5px 20px 20px 5px;
