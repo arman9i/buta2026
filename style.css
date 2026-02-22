@@ -1,381 +1,561 @@
 :root {
-    --bg-color: #d2b48c;
-    --paper-color: #fcfaf2;
-    --accent: #12adad;
-    --text: #000000;
+  --bg-color: #d2b48c;
+  --paper-color: #fcfaf2;
+  --accent: #12adad;
+  --text: #000000;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background: #3d2b1f url('https://www.transparenttextures.com/patterns/cardboard-flat.png');
-    font-family: 'Patrick Hand', cursive;
-    color: var(--text);
-    overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  background: #3d2b1f
+    url('https://www.transparenttextures.com/patterns/cardboard-flat.png');
+  font-family: 'Patrick Hand', cursive;
+  color: var(--text);
+  overflow-x: hidden;
 }
 
 .page {
-    display: none;
-    min-height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
-    animation: fadeIn 0.5s ease;
+  display: none;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  animation: fadeIn 0.5s ease;
 }
 
-.active { display: block; }
+.active {
+  display: block;
+}
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* COVER STYLE */
 .notebook-cover {
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('Galeri/cover-3.jpg');
-    width: 90%; max-width: 400px; height: 550px;
-    margin: 40px auto;
-    border-radius: 5px 20px 20px 5px;
-    position: relative;
-    box-shadow: 15px 15px 30px rgba(0,0,0,0.5);
-    display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
-    cursor: pointer; border: 2px solid #000000;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('Galeri/cover-3.jpg');
+  width: 90%;
+  max-width: 400px;
+  height: 550px;
+  margin: 40px auto;
+  border-radius: 5px 20px 20px 5px;
+  position: relative;
+  box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+  border: 2px solid #000000;
 }
 
 .binding {
-    position: absolute; left: 10px; top: 20px; bottom: 20px;
-    width: 20px; border-left: 5px dotted #f1c40f;
+  position: absolute;
+  left: 10px;
+  top: 20px;
+  bottom: 20px;
+  width: 20px;
+  border-left: 5px dotted #f1c40f;
 }
 
-.main-title { font-family: 'Gochi Hand'; font-size: 4rem; color: #f1c40f; margin: 0; }
-.sub-title { color: white; letter-spacing: 2px; }
+.main-title {
+  font-family: 'Gochi Hand';
+  font-size: 4rem;
+  color: #f1c40f;
+  margin: 0;
+}
+.sub-title {
+  color: white;
+  letter-spacing: 2px;
+}
 
 /* SCRAPBOOK ELEMENTS */
 .scrap-header {
-    display: flex; justify-content: space-between; gap: 10px; margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .btn-scrap {
-    background: var(--accent); border: none; padding: 10px 15px;
-    color: white; border-radius: 5px; cursor: pointer; font-family: inherit;
+  background: var(--accent);
+  border: none;
+  padding: 10px 15px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 #searchBar {
-    flex-grow: 1; padding: 10px; border-radius: 20px; border: 1px solid #ccc;
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
 }
 
 .scrapbook-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 20px; padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 20px;
+  padding: 10px;
 }
 
 .scrap-card {
-    background: var(--paper-color); padding: 10px;
-    box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
-    transform: rotate(var(--r)); transition: 0.3s; cursor: pointer;
+  background: var(--paper-color);
+  padding: 10px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  transform: rotate(var(--r));
+  transition: 0.3s;
+  cursor: pointer;
 }
 
-.scrap-card:hover { transform: scale(1.1) rotate(0deg); z-index: 5; }
+.scrap-card:hover {
+  transform: scale(1.1) rotate(0deg);
+  z-index: 5;
+}
 
-.scrap-card img { width: 100%; filter: sepia(0.2); }
+.scrap-card img {
+  width: 100%;
+  filter: sepia(0.2);
+}
 
-.scrap-card h3 { font-family: 'Indie Flower'; text-align: center; margin: 5px 0; }
+.scrap-card h3 {
+  font-family: 'Indie Flower';
+  text-align: center;
+  margin: 5px 0;
+}
 
 /* POLAROID GALERI-1 */
-.gallery-container-1 { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-.polaroid-1 {
-    background: white; padding: 10px 10px 30px 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3); transform: rotate(var(--r));
+.gallery-container-1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
-.polaroid-1 img { width: 300px; height: 300px; object-fit: cover; }
+.polaroid-1 {
+  background: white;
+  padding: 10px 10px 30px 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transform: rotate(var(--r));
+}
+.polaroid-1 img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
 
 /* POLAROID GALERI-2 */
-.gallery-container-2 { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-.polaroid-2 {
-    background: white; padding: 10px 10px 30px 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3); transform: rotate(var(--r));
+.gallery-container-2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
-.polaroid-2 img { width: 300px; height: 200px; object-fit: cover; }
+.polaroid-2 {
+  background: white;
+  padding: 10px 10px 30px 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transform: rotate(var(--r));
+}
+.polaroid-2 img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
 
 /* POLAROID GALERI-3 */
-.gallery-container-3 { display: flex; flex-wrap: wrap; justify-content: left; gap: 20px; }
-.polaroid-3 {
-    background: white; padding: 10px 10px 30px 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3); transform: rotate(var(--r));
+.gallery-container-3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 20px;
 }
-.polaroid-3 img { width: 150px; height: 150px; object-fit: cover; }
+.polaroid-3 {
+  background: white;
+  padding: 10px 10px 30px 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transform: rotate(var(--r));
+}
+.polaroid-3 img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
 
 /* MODAL */
 .modal {
-    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.8); z-index: 1000; align-items: center; justify-content: center;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
 }
 .modal-content {
-    background: var(--paper-color); padding: 30px; border-radius: 5px;
-    width: 80%; max-width: 400px; position: relative;
-    box-shadow: 0 0 20px #f1c40f;
+  background: var(--paper-color);
+  padding: 30px;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 0 20px #f1c40f;
 }
-.close { position: absolute; right: 15px; top: 10px; font-size: 25px; cursor: pointer; }
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 25px;
+  cursor: pointer;
+}
 
 /* RESPONSIVE */
 @media (max-width: 600px) {
-    .scrapbook-grid { grid-template-columns: 1fr 1fr; }
+  .scrapbook-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 /* Floating Music Button */
 .music-control {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: var(--accent);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 50px;
-    cursor: pointer;
-    z-index: 2000;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    font-family: 'Patrick Hand', cursive;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  font-family: 'Patrick Hand', cursive;
 }
 
 /* Modal Alumni dengan Foto */
 .modal-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .modal-photo {
-    width: 100%;
-    max-width: 250px;
-    height: 250px;
-    object-fit: cover;
-    border: 8px solid white;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    transform: rotate(-2deg);
-    margin-bottom: 20px;
+  width: 100%;
+  max-width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border: 8px solid white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: rotate(-2deg);
+  margin-bottom: 20px;
 }
 
 .scrapbook-paper {
-    background: #fdfaf1 url('https://www.transparenttextures.com/patterns/lined-paper-2.png');
-    border-radius: 0;
-    border: 1px solid #ddd;
+  background: #fdfaf1
+    url('https://www.transparenttextures.com/patterns/lined-paper-2.png');
+  border-radius: 0;
+  border: 1px solid #ddd;
 }
 
 .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 30px;
-    cursor: pointer;
-    color: #8b4513;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #8b4513;
 }
 
 /* Responsif Mobile */
 @media (max-width: 600px) {
-    .modal-content { width: 90%; padding: 15px; }
-    .modal-photo { max-width: 200px; height: 200px; }
+  .modal-content {
+    width: 90%;
+    padding: 15px;
+  }
+  .modal-photo {
+    max-width: 200px;
+    height: 200px;
+  }
 }
 
 .polaroid-3 {
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .polaroid-3:hover {
-    transform: scale(1.05) rotate(0deg) !important;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    z-index: 10;
+  transform: scale(1.05) rotate(0deg) !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  z-index: 10;
 }
 
 .gallery-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
 }
 
 .polaroid-3::before {
-    content: "";
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 30px;
-    background-color: rgba(18, 173, 173, 0.4); /* Warna aksenmu dengan transparansi */
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 30px;
+  background-color: rgba(
+    18,
+    173,
+    173,
+    0.4
+  ); /* Warna aksenmu dengan transparansi */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Efek Selotip di atas foto */
-.polaroid-3, .scrap-card {
-    position: relative;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.polaroid-3,
+.scrap-card {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.polaroid-3::before, .scrap-card::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 70px;
-    height: 25px;
-    background-color: rgba(241, 196, 15, 0.3); /* Warna selotip transparan */
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
-    z-index: 2;
+.polaroid-3::before,
+.scrap-card::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 25px;
+  background-color: rgba(241, 196, 15, 0.3); /* Warna selotip transparan */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+  z-index: 2;
 }
 
 /* Efek Hover: Foto sedikit membesar dan tegak */
-.polaroid-3:hover, .scrap-card:hover {
-    transform: scale(1.05) rotate(0deg) !important;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-    z-index: 100;
+.polaroid-3:hover,
+.scrap-card:hover {
+  transform: scale(1.05) rotate(0deg) !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  z-index: 100;
 }
 
 /* Animasi mengambang untuk elemen dekorasi */
 @keyframes floating {
-    0% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-10px) rotate(2deg); }
-    100% { transform: translateY(0px) rotate(0deg); }
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
 }
 
 .floating-deco {
-    animation: floating 3s ease-in-out infinite;
-    display: inline-block;
+  animation: floating 3s ease-in-out infinite;
+  display: inline-block;
 }
 
 /* Styling Wall of Fame */
 .wall-of-fame-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  padding: 10px;
 }
 
 .award-card {
-    background: #fff;
-    padding: 15px;
-    border: 1px dashed #777;
-    border-radius: 5px;
-    text-align: center;
-    transform: rotate(var(--r));
-    box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+  background: #fff;
+  padding: 15px;
+  border: 1px dashed #777;
+  border-radius: 5px;
+  text-align: center;
+  transform: rotate(var(--r));
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .award-card:hover {
-    transform: scale(1.1) rotate(0deg) !important;
-    z-index: 10;
+  transform: scale(1.1) rotate(0deg) !important;
+  z-index: 10;
 }
 
 .award-card h3 {
-    font-family: 'Gochi Hand', cursive;
-    color: var(--accent);
-    margin: 5px 0;
-    font-size: 1.2rem;
+  font-family: 'Gochi Hand', cursive;
+  color: var(--accent);
+  margin: 5px 0;
+  font-size: 1.2rem;
 }
 
 .award-card .badge {
-    font-size: 30px;
-    margin-bottom: 5px;
+  font-size: 30px;
+  margin-bottom: 5px;
 }
 
 .award-card small {
-    display: block;
-    margin-top: 8px;
-    font-style: italic;
-    color: #555;
-    font-size: 0.9rem;
+  display: block;
+  margin-top: 8px;
+  font-style: italic;
+  color: #555;
+  font-size: 0.9rem;
 }
 
 /* Responsif untuk HP */
 @media (max-width: 480px) {
-    .wall-of-fame-grid {
-        grid-template-columns: 1fr;
-    }
+  .wall-of-fame-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /*Untuk Pesan Suara */
 .voice-note-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 2px solid var(--accent);
-    background-color: #fffaf0 !important; /* Warna kertas krem */
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid var(--accent);
+  background-color: #fffaf0 !important; /* Warna kertas krem */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 audio::-webkit-media-controls-enclosure {
-    background-color: var(--accent);
-    border-radius: 20px;
+  background-color: var(--accent);
+  border-radius: 20px;
 }
 
 /*Doodle Map */
 .map-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    margin: 20px auto;
-    border: 2px solid #5d4037;
-    border-radius: 10px;
-    overflow: hidden;
-    background: #fdf5e6;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  border: 2px solid #5d4037;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fdf5e6;
 }
 
 .base-map {
-    width: 100%;
-    display: block;
-    opacity: 0.8;
+  width: 100%;
+  display: block;
+  opacity: 0.8;
 }
 
 .marker {
-    position: absolute;
-    cursor: pointer;
-    text-align: center;
-    transition: transform 0.3s ease;
+  position: absolute;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
 .marker:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .marker .icon {
-    font-size: 24px;
-    display: block;
-    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.2));
+  font-size: 24px;
+  display: block;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
 }
 
 .marker .label {
-    background: rgba(18, 173, 173, 0.9);
-    color: white;
-    font-size: 10px;
-    padding: 2px 5px;
-    border-radius: 10px;
-    font-family: 'Patrick Hand', cursive;
+  background: rgba(18, 173, 173, 0.9);
+  color: white;
+  font-size: 10px;
+  padding: 2px 5px;
+  border-radius: 10px;
+  font-family: 'Patrick Hand', cursive;
 }
 
 /* Atur Posisi Marker (Sesuaikan dengan gambar denahmu) */
-.kantin { top: 80%; left: 90%; }
-.lapangan { top: 40%; left: 50%; }
-.perpus { top: 75%; left: 10%; }
-
+.kantin {
+  top: 80%;
+  left: 90%;
+}
+.lapangan {
+  top: 40%;
+  left: 50%;
+}
+.perpus {
+  top: 75%;
+  left: 10%;
+}
 
 .modal-photo {
-    width: 100%;
-    max-width: 250px;
-    height: 250px;
-    object-fit: cover; /* Penting agar video/gif tidak gepeng */
-    border: 5px solid white;
-    box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
-    border-radius: 5px;
+  width: 100%;
+  max-width: 250px;
+  height: 250px;
+  object-fit: cover; /* Penting agar video/gif tidak gepeng */
+  border: 5px solid white;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
 }
 
 /* Tambahkan bingkai sedikit miring khas scrapbook */
 video.modal-photo {
-    background-color: #000;
-    transform: rotate(-2deg);
+  background-color: #000;
+  transform: rotate(-2deg);
+}
+
+/* Styling Galeri Polaroid */
+.bts-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.polaroid {
+  background: white;
+  padding: 15px 15px 30px 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: rotate(-2deg); /* Efek miring estetik */
+  transition: 0.3s;
+  width: 200px;
+}
+
+.polaroid:nth-child(even) {
+  transform: rotate(3deg); /* Foto genap miring ke arah lain */
+}
+
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.1);
+  z-index: 10;
+}
+
+.polaroid img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+.polaroid p {
+  font-family: 'Gochi Hand', cursive;
+  text-align: center;
+  margin-top: 10px;
+  color: #333;
 }
