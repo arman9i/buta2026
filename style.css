@@ -559,3 +559,8 @@ video.modal-photo {
   margin-top: 10px;
   color: #333;
 }
+
+
+.page {
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
