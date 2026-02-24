@@ -78,6 +78,20 @@ body {
   letter-spacing: 2px;
 }
 
+.bloknote {
+  font-size: 1.4rem; 
+  line-height: 1.2;
+}
+
+.bloknote-bg {
+  background: #fffaf0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+  text-align: justify;
+}
+
+
 /* SCRAPBOOK ELEMENTS */
 .scrap-header {
   display: flex;
