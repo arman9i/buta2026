@@ -21,6 +21,7 @@ body {
   padding: 20px;
   box-sizing: border-box;
   animation: fadeIn 0.5s ease;
+  text-align: center;
 }
 
 .active {
@@ -83,12 +84,30 @@ body {
   line-height: 1.2;
 }
 
-.bloknote-bg {
-  background: #fffaf0;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
-  text-align: justify;
+.blocknote-bg {
+    /* Memasukkan gambar latar */
+    background-image: url('Galeri/Latar-1.png');
+    
+    /* Mengatur agar gambar menutupi seluruh area tanpa terpotong aneh */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Mengatur bentuk kartu */
+    padding: 30px;
+    border-radius: 10px;
+    border: none; /* Menghilangkan garis pinggir default blockquote */
+    
+    /* Agar kartu memiliki bayangan seperti di contoh */
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.4); 
+    
+    /* Menentukan lebar kartu */
+    max-width: 500px;
+    margin: 20px auto;
+    
+    /* Mengatur font agar sesuai tema buku tahunan */
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
 }
 
 
@@ -577,4 +596,127 @@ video.modal-photo {
 
 .page {
     transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+/* Kontainer utama agar kartu berada di tengah layar */
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f5dc91; /* Warna latar belakang gelap seperti di screenshot */
+}
+
+/* Gaya utama Blockquote */
+.paper-card {
+    background-image: url('Latar-1.jpg');
+    background-size: cover;
+    background-blend-mode: multiply;
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 900px; /* Lebih lebar untuk menampung teks di samping */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.card-body {
+    display: flex;
+    align-items: flex-start; /* Teks dimulai dari atas foto */
+    gap: 30px; /* Jarak antara foto dan teks */
+}
+
+.photo-section {
+    flex: 0 0 200px; /* Foto tetap di ukuran 200px, tidak mengecil */
+}
+
+.text-section {
+    flex: 1; /* Teks akan mengambil sisa ruang yang ada */
+    text-align: left;
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Stil Polaroid untuk Foto */
+.polaroid {
+    background: white;
+    padding: 10px 10px 20px 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transform: rotate(-2deg); /* Sedikit miring agar estetik */
+}
+
+.polaroid img {
+    width: 100%;
+    height: auto;
+}
+
+.caption {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* RESPONSIF: Jika di HP, foto pindah ke atas teks */
+@media (max-width: 768px) {
+    .card-body {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .text-section {
+        text-align: center;
+    }
+    
+    .photo-section {
+        margin-bottom: 20px;
+    }
+}
+
+/* Variasi Warna Latar */
+.bg-kuning { background-color: #fff9c4; } /* Kuning muda lembut */
+.bg-biru   { background-color: #e3f2fd; } /* Biru muda */
+.bg-hijau  { background-color: #e8f5e9; } /* Hijau pastel */
+.bg-pink   { background-color: #fce4ec; } /* Pink pucat */
+
+/* PENGATURAN RESPONSIF */
+
+/* Tampilan Desktop (Layar Lebar) */
+@media (min-width: 1024px) {
+    .paper-card {
+        width: 700px; /* Melebar di desktop */
+        font-size: 18px;
+    }
+}
+
+/* Tampilan Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .paper-card {
+        width: 80%; /* Menyesuaikan lebar layar tablet */
+        font-size: 16px;
+        padding: 50px 30px;
+    }
+}
+
+/* Tampilan Smartphone (Layar Kecil) */
+@media (max-width: 767px) {
+    .paper-card {
+        width: 95%; /* Hampir memenuhi lebar layar HP */
+        font-size: 14px; /* Mengecilkan teks agar muat banyak */
+        padding: 40px 20px; /* Mengurangi padding agar ruang teks lebih luas */
+        background-size: cover; /* Agar gambar latar tetap penuh meski kotak memanjang */
+    }
+}
+
+/* Efek Selotip Transparan */
+.tape {
+    width: 80px;
+    height: 30px;
+    background-color: rgba(255, 255, 150, 0.6); /* Kuning transparan */
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+    backdrop-filter: blur(1px); /* Efek blur di bawah selotip */
+    transform: rotate(-3deg);
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    translate: -50%;
+    z-index: 2;
 }
