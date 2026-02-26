@@ -136,3 +136,42 @@ function showGalleryDetail(imageSrc, title, description) {
     modal.style.display = "flex";
 }
 
+let touchstartX = 0;
+let touchendX = 0;
+
+// Fungsi untuk mengecek arah swipe
+function checkDirection() {
+    const threshold = 50; // Jarak minimal geser (pixel) agar dianggap swipe
+    
+    // Cari halaman yang sedang aktif saat ini
+    const activePage = document.querySelector('.page.active');
+    if (!activePage) return;
+    
+    // Ambil nomor halaman dari ID (misal "page-7" diambil angka 7-nya)
+    const currentPageId = activePage.id;
+    const currentPageNum = parseInt(currentPageId.split('-')[1]);
+
+    if (touchendX < touchstartX - threshold) {
+        // Geser ke KIRI (Swipe Left) -> Halaman BERIKUTNYA
+        if (currentPageNum < 8) { // Ganti 8 dengan total halaman terakhirmu
+            nextPage(currentPageNum + 1);
+        }
+    }
+    
+    if (touchendX > touchstartX + threshold) {
+        // Geser ke KANAN (Swipe Right) -> Halaman SEBELUMNYA
+        if (currentPageNum > 1) {
+            nextPage(currentPageNum - 1);
+        }
+    }
+}
+
+// Event listener untuk mendeteksi sentuhan
+document.addEventListener('touchstart', e => {
+    touchstartX = e.changedTouches[0].screenX;
+});
+
+document.addEventListener('touchend', e => {
+    touchendX = e.changedTouches[0].screenX;
+    checkDirection();
+});
