@@ -37,8 +37,7 @@ function renderAlumni(data) {
     });
 }
 
-// 4. FUNGSI BARU: showProfile (MENGGANTIKAN YANG LAMA)
-// Fungsi ini sekarang menampilkan FOTO BESAR dan INFO LENGKAP
+// 4. FUNGSI : showProfile
 function showProfile(item) {
     const modal = document.getElementById('profileModal');
     const modalData = document.getElementById('modalData');
@@ -136,6 +135,7 @@ function showGalleryDetail(imageSrc, title, description) {
     modal.style.display = "flex";
 }
 
+// MENAMBAHKAN FUNGSI SWIPE UNTUK NAVIGASI HALAMAN (KIRI/KANAN)
 let touchstartX = 0;
 let touchendX = 0;
 
