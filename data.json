@@ -4,7 +4,7 @@
     "nama": "Adzra Faiha",
     "kelas": "XII IIS-1",
     "pesan": "YOLO(you only live once)",
-    "foto": "Galeri/Adzra.gif",
+    "foto": "Galeri/img/Adzra.gif",
     "video": "Galeri/video.mp4",
     "audio": "Galeri/voice/bilqis.mp3",
     "bio": "bu dwi baikk sekaliii, loyall, pengertian sama murid nyaa. selama adzra sekolah, baru kali ini ketemu wali kelas seperti bu dwi, semoga bu dwi sehat selalu dan tetap menjadi wali kelas yang baik untuk adzra dan teman-teman adzra yang lain."
@@ -14,7 +14,9 @@
     "nama": "Ahmad Danish Hariri Harahap",
     "kelas": "XII IIS-1",
     "pesan": "Nikmati masa-masa sekarang dari pada menyesal di kemudian hari!",
-    "foto": "Galeri/img/Ahmad Danish Hariri Harahap.jpg",
+    "foto": "Galeri/img/Ahmad Danish.gif",
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
     "bio": "enak punya kawan yg kayak gini, kadang ada enaknya kadang ada enggaknya juga, tapi yang pasti dia selalu ada buat kita."
   },
   {
@@ -23,64 +25,298 @@
     "kelas": "XII IIS-1",
     "pesan": "Kegagalan adalah kesuksesan yang tertunda, jadi jangan pernah menyerah!",
     "foto": "Galeri/img/Aldiansyah_Sitorus.jpg",
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
     "bio": "jangan pernah menyerah, karena kegagalan adalah kesuksesan yang tertunda. jadi teruslah berusaha dan jangan pernah menyerah!"
   },
   {
     "id": 4,
     "nama": "Alfira Khairani",
     "kelas": "XII IIS-1",
-    "pesan": "Maju terus pantang mundur!",
+    "pesan": "Roda kehidupan terus berputar, jadi tetaplah semangat dan jangan pernah menyerah!",
     "foto": "Galeri/img/Alfira Khairani.jpg",
-    "bio": "Andi ahli dalam matematika dan sering membantu teman."
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "Tetap semangat dan jangan pernah menyerah dalam menghadapi tantangan. Kalian semua memiliki potensi yang luar biasa, jadi teruslah berusaha dan jangan takut untuk bermimpi besar!"
   },
   {
     "id": 5,
     "nama": "Alfredo Johannes Halomoan",
     "kelas": "XII IIS-1",
-    "pesan": "Maju terus pantang mundur!",
+    "pesan": "Dimanapun kita berada, tetaplah menjadi pribadi yang baik dan selalu berusaha untuk memberikan yang terbaik!",
     "foto": "Galeri/img/Alfredo Johannes Halomoan.jpg",
-    "bio": "Andi ahli dalam matematika dan sering membantu teman."
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "Persahabatan dengan orang yang baik, karena mereka akan selalu mendukung dan membantu kita dalam menghadapi tantangan hidup. Jadi, tetaplah menjadi pribadi yang baik dan selalu berusaha untuk memberikan yang terbaik!"
   },
   {
     "id": 6,
     "nama": "Aqila Zahwa",
     "kelas": "XII IIS-1",
-    "pesan": "Maju terus pantang mundur!",
+    "pesan": "Kita boleh miskin materi, tapi jangan pernah miskin semangat dan tekad untuk meraih impian kita!",
     "foto": "Galeri/img/Aqila Zahwa.jpg",
-    "bio": "Andi ahli dalam matematika dan sering membantu teman."
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "kemiskinan materi bukanlah halangan untuk meraih impian kita. yang penting adalah semangat dan tekad untuk terus berusaha dan tidak pernah menyerah. jadi, tetaplah semangat dan teruslah berusaha untuk meraih impian kalian!"
   },
   {
     "id": 7,
     "nama": "Asyfa Fawwaz Sembiring",
     "kelas": "XII IIS-1",
-    "pesan": "Maju terus pantang mundur!",
+    "pesan": "Hidup bukan tentang seberapa banyak kita memiliki, tapi tentang seberapa banyak kita memberikan dan berbagi dengan orang lain!",
     "foto": "Galeri/img/Asyfa Fawwaz Sembiring.jpg",
-    "bio": "Andi ahli dalam matematika dan sering membantu teman."
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "berbagi dengan orang lain, kita bisa merasakan kebahagiaan yang lebih besar daripada hanya memiliki banyak harta. jadi, tetaplah berbagi dengan orang lain dan jangan pernah takut untuk memberikan yang terbaik dari diri kalian!"
   },
   {
     "id": 8,
     "nama": "Bilqis Angel Khalila Azzahra",
     "kelas": "XII IIS-1",
-    "pesan": "Maju terus pantang mundur!",
-    "foto": "Galeri/img/Bilqis Angel Khalila Azzahra.jpg",
+    "pesan": "Kegagalan adalah kesuksesan yang tertunda, jadi jangan pernah menyerah!",
+    "foto": "Galeri/img/bilqis Angel Khalila Azzahra.jpg",
     "video": "Galeri/video.mp4",
-    "bio": "Andi ahli dalam matematika dan sering membantu teman.",
-    "audio": "Galeri/voice/bilqis.mp3"
-  }, 
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "orang yang menyerah adalah orang yang gagal, jadi jangan pernah menyerah dalam menghadapi tantangan hidup. teruslah berusaha dan jangan pernah menyerah!"
+  },
   {
     "id": 9,
     "nama": "Carisa Putri Adila",
     "kelas": "XII IIS-1",
-    "pesan": "Maju terus pantang mundur!",
+    "pesan": "Berusaha keraslah untuk meraih impianmu, karena dengan usaha yang keras, tidak ada yang tidak mungkin!",
     "foto": "Galeri/img/Carisa Putri Adila.jpg",
-    "bio": "Andi ahli dalam matematika dan sering membantu teman."
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "jangan terlena dengan kenyamanan, karena dengan usaha yang keras, tidak ada yang tidak mungkin. jadi, tetaplah berusaha keras untuk meraih impian kalian!"
   },
   {
     "id": 10,
     "nama": "Dava Triawan",
     "kelas": "XII IIS-1",
-    "pesan": "Maju terus pantang mundur!",
+    "pesan": "Menunggu kesempatan yang tepat untuk meraih impianmu, karena dengan kesabaran dan ketekunan, kamu akan mencapai apa yang kamu inginkan!",
     "foto": "Galeri/img/Dava Triawan.jpg",
-    "bio": "Andi ahli dalam matematika dan sering membantu teman."
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "Tapi jangan hanya menunggu, karena dengan kesabaran dan ketekunan, kamu akan mencapai apa yang kamu inginkan. jadi, tetaplah berusaha dan jangan pernah menyerah dalam meraih impian kalian!"
+  },
+  {
+    "id": 11,
+    "nama": "Dina Mariani Br. Sianturi",
+    "kelas": "XII IIS-1",
+    "pesan": "Kita pasti bisa meraih impian kita, asalkan kita memiliki tekad yang kuat dan tidak pernah menyerah!",
+    "foto": "Galeri/img/Dina Mariani Br. Sianturi.jpg",
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "jika kita menyerah dalam menghadapi tantangan, maka kita tidak akan pernah meraih impian kita. jadi, tetaplah memiliki tekad yang kuat dan jangan pernah menyerah dalam meraih impian kalian!"
+  },
+  {
+    "id": 12,
+    "nama": "Elisabet Gabriella",
+    "kelas": "XII IIS-1",
+    "pesan": "........",
+    "foto": "Galeri/img/Elisabet Gabriella.jpg",
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "....................."
+  },
+  {
+    "id": 13,
+    "nama": "Fandika Ramadhan",
+    "kelas": "XII IIS-1",
+    "pesan": "........",
+    "foto": "Galeri/img/Fandika Ramadhan.jpg",
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "....................."
+  },
+  {
+    "id": 14,
+    "nama": "Halvel Gusali Perdana",
+    "kelas": "XII IIS-1",
+    "pesan": "........",
+    "foto": "Galeri/img/Halvel Gusali Perdana.jpg",
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "....................."
+  },
+  {
+    "id": 15,
+    "nama": "Intan Ayu",
+    "kelas": "XII IIS-1",
+    "pesan": "........",
+    "foto": "Galeri/img/Intan Ayu.jpg",
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "....................."
+  },
+  {
+    "id": 16,
+    "nama": "Kaeyla Siregar",
+    "kelas": "XII IIS-1",
+    "pesan": "........",
+    "foto": "Galeri/img/Kaeyla Siregar.jpg",
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "....................."
+  },
+  {
+    "id": 17,
+    "nama": "Maysarah Khairani",
+    "kelas": "XII IIS-1",
+    "pesan": "........",
+    "foto": "Galeri/img/Maysarah Khairani.jpg",
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "....................."
+  },
+  {
+    "id": 18,
+    "nama": "Mutiara Azzahra",
+    "kelas": "XII IIS-1",
+    "pesan": "........",
+    "foto": "Galeri/img/Mutiara Azzahra.jpg",
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "....................."
+  },
+  {
+    "id": 19,
+    "nama": "Mutiara Sabilla",
+    "kelas": "XII IIS-1",
+    "pesan": "........",
+    "foto": "Galeri/img/Mutiara Sabilla.jpg",
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "....................."
+  },
+  {
+    "id": 20,
+    "nama": "Nael Rivaldo Sinaga",
+    "kelas": "XII IIS-1",
+    "pesan": "........",
+    "foto": "Galeri/img/Nael Rivaldo Sinaga.jpg",
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "....................."
+  },
+  {
+    "id": 21,
+    "nama": "Najwa Kamelia",
+    "kelas": "XII IIS-1",
+    "pesan": "........",
+    "foto": "Galeri/img/Najwa Kamelia.jpg",
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "....................."
+  },
+  {
+    "id": 22,
+    "nama": "Natasha",
+    "kelas": "XII IIS-1",
+    "pesan": "........",
+    "foto": "Galeri/img/Natasha.jpg",
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "....................."
+  },
+  {
+    "id": 23,
+    "nama": "Naya Khairani",
+    "kelas": "XII IIS-1",
+    "pesan": "........",
+    "foto": "Galeri/img/Naya Khairani.jpg",
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "....................."
+  },
+  {
+    "id": 24,
+    "nama": "Nurhayani Br Siregar",
+    "kelas": "XII IIS-1",
+    "pesan": "........",
+    "foto": "Galeri/img/Nurhayani Br Siregar.jpg",
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "....................."
+  },
+  {
+    "id": 25,
+    "nama": "Nurul Ghotimah",
+    "kelas": "XII IIS-1",
+    "pesan": "........",
+    "foto": "Galeri/img/Nurul Ghotimah.jpg",
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "....................."
+  },
+  {
+    "id": 26,
+    "nama": "Rafi Alfathir Siregar",
+    "kelas": "XII IIS-1",
+    "pesan": "........",
+    "foto": "Galeri/img/Rafi Alfathir Siregar.jpg",
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "....................."
+  },
+  {
+    "id": 27,
+    "nama": "Rezelin Andini",
+    "kelas": "XII IIS-1",
+    "pesan": "........",
+    "foto": "Galeri/img/Rezelin Andini.jpg",
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "....................."
+  },
+  {
+    "id": 28,
+    "nama": "Ririn Dwi Yanti",
+    "kelas": "XII IIS-1",
+    "pesan": "........",
+    "foto": "Galeri/img/Ririn Dwi Yanti.jpg",
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "....................."
+  },
+  {
+    "id": 29,
+    "nama": "Rizky Aditya",
+    "kelas": "XII IIS-1",
+    "pesan": "........",
+    "foto": "Galeri/img/Rizky Aditya.jpg",
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "....................."
+  },
+  {
+    "id": 30,
+    "nama": "Sekar Dwi Kartika",
+    "kelas": "XII IIS-1",
+    "pesan": "........",
+    "foto": "Galeri/img/Sekar Dwi Kartika.jpg",
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "....................."
+  },
+  {
+    "id": 31,
+    "nama": "Thalita Nadia Soufi Batubara",
+    "kelas": "XII IIS-1",
+    "pesan": "........",
+    "foto": "Galeri/img/Thalita Nadia Soufi Batubara.jpg",
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "....................."
+  },
+  {
+    "id": 32,
+    "nama": "Widya Lestari Sitorus",
+    "kelas": "XII IIS-1",
+    "pesan": "........",
+    "foto": "Galeri/img/Widya Lestari Sitorus.jpg",
+    "video": "Galeri/video.mp4",
+    "audio": "Galeri/voice/bilqis.mp3",
+    "bio": "....................."
   }
 ]
