@@ -721,3 +721,19 @@ video.modal-photo {
     translate: -50%;
     z-index: 2;
 }
+
+/* Sudut Ruang Sekolah Penuh Kenangan */
+.sudut {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.2rem; 
+    line-height: 1.4; 
+    color:azure; 
+    text-align: justify; 
+    margin-top: 0;
+}
+
+.sudut-judul {
+    color: aqua; 
+    text-align: left; 
+    margin-bottom: 1px;
+}
