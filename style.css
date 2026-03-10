@@ -18,10 +18,10 @@ body {
 .page {
   display: none;
   min-height: 100vh;
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
   animation: fadeIn 0.5s ease;
-  text-align: center;
+  text-align: left;
 }
 
 .active {
@@ -133,7 +133,7 @@ body {
 #searchBar {
   flex-grow: 1;
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 10px;
   border: 1px solid #ccc;
 }
 
@@ -257,10 +257,66 @@ body {
 }
 
 /* RESPONSIVE */
-@media (max-width: 600px) {
-  .scrapbook-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+/* PENGATURAN RESPONSIF UNIVERSAL */
+
+/* Tampilan Smartphone (Layar di bawah 768px) */
+@media (max-width: 767px) {
+    .momen-item {
+        flex-direction: column !important; /* Paksa foto di bawah teks */
+        align-items: flex-start !important; /* Pastikan konten rata kiri */
+        gap: 15px;
+        padding: 15px;
+        width: 95%;
+    }
+
+    .text-content {
+        text-align: left !important;
+        width: 100%;
+    }
+
+    .sudut {
+        font-size: 1rem !important; /* Ukuran teks lebih nyaman di HP */
+        text-align: justify !important;
+        line-height: 1.6;
+    }
+
+    .sudut-judul {
+        font-size: 1.4rem !important;
+        text-align: left !important;
+        display: block !important; /* Agar garis bawah memenuhi teks saja */
+    }
+
+    .photo-content {
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Foto tetap di tengah box-nya */
+        margin-top: 10px;
+    }
+
+    .polaroid, .polaroid-3 {
+        width: 80% !important; /* Ukuran foto lebih proporsional di HP */
+        max-width: 250px;
+    }
+
+    /* Memperbaiki Header agar tombol tidak menumpuk */
+    .scrap-header {
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 0.8rem;
+    }
+}
+
+/* Tampilan Desktop (Layar di atas 1024px) */
+@media (min-width: 1024px) {
+    .momen-item {
+        flex-direction: row; /* Kembali ke samping di layar lebar */
+        gap: 40px;
+    }
+    
+    /* Pola Selang-seling agar tidak membosankan */
+    .momen-item:nth-child(even) {
+        flex-direction: row-reverse;
+    }
 }
 
 /* Floating Music Button */
@@ -316,17 +372,6 @@ body {
   color: #8b4513;
 }
 
-/* Responsif Mobile */
-@media (max-width: 600px) {
-  .modal-content {
-    width: 90%;
-    padding: 15px;
-  }
-  .modal-photo {
-    max-width: 200px;
-    height: 200px;
-  }
-}
 
 .polaroid-3 {
   cursor: pointer;
@@ -457,12 +502,6 @@ body {
   font-size: 0.9rem;
 }
 
-/* Responsif untuk HP */
-@media (max-width: 480px) {
-  .wall-of-fame-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 /*Untuk Pesan Suara */
 .voice-note-container {
@@ -702,7 +741,7 @@ video.modal-photo {
 }
 
 /* Tampilan Smartphone (Layar Kecil) */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .paper-card {
         width: 95%; /* Hampir memenuhi lebar layar HP */
         font-size: 12px; /* Mengecilkan teks agar muat banyak */
