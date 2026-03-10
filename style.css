@@ -732,13 +732,14 @@ video.modal-photo {
     font-size: 1.2rem; 
     line-height: 1.4; 
     color:azure; 
-    text-align: justify; 
+    text-align: justify !important; 
     margin-top: 0;
+    width: 100%;
 }
 
 .sudut-judul {
     border-bottom: 2px dashed aqua;
-    display: inline-block;
+    display: inline-block !important;
     color: aqua; 
     margin-bottom: 1px;
 }
