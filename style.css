@@ -524,9 +524,13 @@ audio::-webkit-media-controls-enclosure {
 }
 
 /* Atur Posisi Marker (Sesuaikan dengan gambar denahmu) */
-.kantin {
+.kantin-1 {
   top: 80%;
   left: 90%;
+}
+.kantin-2 {
+  top: 15%;
+  left: 1%;
 }
 .lapangan {
   top: 40%;
@@ -630,7 +634,7 @@ video.modal-photo {
 
 .text-section {
     flex: 1; /* Teks akan mengambil sisa ruang yang ada */
-    text-align: left;
+    text-align: justify;
     font-family: 'Segoe UI', sans-serif;
     line-height: 1.8;
     color: #333;
@@ -650,7 +654,7 @@ video.modal-photo {
 }
 
 .caption {
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
     margin-top: 10px;
     font-weight: bold;
@@ -664,7 +668,7 @@ video.modal-photo {
     }
     
     .text-section {
-        text-align: center;
+        text-align: justify;
     }
     
     .photo-section {
@@ -733,7 +737,52 @@ video.modal-photo {
 }
 
 .sudut-judul {
+    border-bottom: 2px dashed aqua;
+    display: inline-block;
     color: aqua; 
-    text-align: left; 
     margin-bottom: 1px;
 }
+
+/* Container Utama */
+.momen-item {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin: 40px auto;
+    padding: 30px;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.05); /* Efek glassmorphism tipis */
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+/* Pola Selang-seling (Z-Pattern) untuk Desktop */
+@media (min-width: 900px) {
+    .momen-item:nth-child(even) {
+        flex-direction: row-reverse; /* Foto di kiri, teks di kanan */
+    }
+}
+
+.text-content {
+    flex: 2; /* Teks mengambil ruang lebih besar */
+}
+
+.photo-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* Membuat Polaroid lebih cantik */
+.polaroid {
+    background: rgb(242, 243, 239);
+    padding: 15px 15px 40px 15px;
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.3);
+    transform: rotate(-2deg);
+    transition: 0.4s ease;
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
