@@ -183,7 +183,7 @@ body {
   transform: rotate(var(--r));
 }
 .polaroid-1 img {
-  width: 300px;
+  width: 100%;
   height: 300px;
   object-fit: cover;
 }
@@ -202,8 +202,8 @@ body {
   transform: rotate(var(--r));
 }
 .polaroid-2 img {
-  width: 300px;
-  height: 200px;
+  width: 100%;
+  height: 300px;
   object-fit: cover;
 }
 
@@ -221,8 +221,8 @@ body {
   transform: rotate(var(--r));
 }
 .polaroid-3 img {
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  height: auto;
   object-fit: cover;
 }
 
@@ -768,7 +768,7 @@ video.modal-photo {
 /* Sudut Ruang Sekolah Penuh Kenangan */
 .sudut {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1.2rem; 
+    font-size: 1rem; 
     line-height: 1.4; 
     color:azure; 
     text-align: justify !important; 
@@ -820,6 +820,15 @@ video.modal-photo {
     box-shadow: 10px 10px 20px rgba(0,0,0,0.3);
     transform: rotate(-2deg);
     transition: 0.4s ease;
+    /* TAMBAHKAN INI: */
+    width: 90%;       /* Di Mobile dia akan fleksibel */
+    max-width: 250px; /* Di Desktop dia tidak akan lebih dari ini */
+    margin: 10px auto;
+}
+
+.polaroid img {
+    width: 100%;
+    height: auto;     /* Jangan gunakan height tetap agar tidak gepeng */
 }
 
 .polaroid:hover {
