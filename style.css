@@ -702,11 +702,11 @@ video.modal-photo {
 }
 
 /* Tampilan Smartphone (Layar Kecil) */
-@media (max-width: 100%) {
+@media (max-width: 768px) {
     .paper-card {
-        width: 100%; /* Hampir memenuhi lebar layar HP */
-        font-size: 14px; /* Mengecilkan teks agar muat banyak */
-        padding: 40px 20px; /* Mengurangi padding agar ruang teks lebih luas */
+        width: 95%; /* Hampir memenuhi lebar layar HP */
+        font-size: 12px; /* Mengecilkan teks agar muat banyak */
+        padding: 20px 10px; /* Mengurangi padding agar ruang teks lebih luas */
         background-size: cover; /* Agar gambar latar tetap penuh meski kotak memanjang */
     }
 }
