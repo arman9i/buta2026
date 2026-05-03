@@ -920,15 +920,15 @@ video.modal-photo {
   }
 
   .photo-card {
-        height: 250px; /* Sesuaikan tinggi agar tidak terlalu besar di layar HP */
-        cursor: pointer;
-        -webkit-tap-highlight-color: transparent; /* Menghilangkan kotak biru saat disentuh */
-    }
-    
-    /* Opsional: Buat teks sedikit terlihat di HP tanpa harus disentuh */
-    .photo-card .overlay {
-        opacity: 0.8; 
-    }
+    height: 250px; /* Sesuaikan tinggi agar tidak terlalu besar di layar HP */
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent; /* Menghilangkan kotak biru saat disentuh */
+  }
+
+  /* Opsional: Buat teks sedikit terlihat di HP tanpa harus disentuh */
+  .photo-card .overlay {
+    opacity: 0.8;
+  }
 }
 
 /* Lightbox Styles */
