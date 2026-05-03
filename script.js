@@ -175,3 +175,49 @@ document.addEventListener('touchend', e => {
     touchendX = e.changedTouches[0].screenX;
     checkDirection();
 });
+
+// Tambahan Galeri Seni dan Photo Akhir Tahun (Page 13 dan 14)
+// Ambil elemen-elemen yang dibutuhkan
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.querySelector('.lightbox-img');
+const closeBtn = document.querySelector('.close-btn');
+const photoCards = document.querySelectorAll('.photo-card img');
+
+// Fungsi membuka Lightbox
+photoCards.forEach(image => {
+    image.addEventListener('click', () => {
+        lightbox.classList.add('active');
+        lightboxImg.src = image.src; // Mengambil URL gambar yang diklik
+    });
+});
+
+// Fungsi menutup Lightbox
+closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+});
+
+// Tutup lightbox jika area luar gambar diklik
+lightbox.addEventListener('click', (e) => {
+    if (e.target !== lightboxImg) {
+        lightbox.classList.remove('active');
+    }
+});
+
+// Smooth Scroll untuk Navigasi
+document.querySelectorAll('.nav-links a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        document.querySelector(targetId).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Animasi untuk Section Cerita dan Profil
+ScrollReveal().reveal('.content-section', {
+    delay: 300,
+    distance: '60px',
+    origin: 'bottom',
+    duration: 1000
+});
