@@ -44,9 +44,12 @@ body {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url('Galeri/cover-3.jpg');
-  width: 90%;
-  max-width: 400px;
-  height: 550px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #3d2b1f;
+  width: 100%;
+  min-height: 100vh;
   margin: 40px auto;
   border-radius: 5px 20px 20px 5px;
   position: relative;
@@ -1057,4 +1060,18 @@ video.modal-photo {
     gap: 15px;
     font-size: 0.9rem;
   }
+  .notebook-cover {
+    background-attachment: scroll; /* Matikan efek parallax di HP agar lebih ringan */
+    background-size: contain; /* Pastikan gambar tetap proporsional */
+    background-position: center center;
+    height: 100vh; /* Pastikan cover tetap memenuhi layar */
+    padding: 20px;                 /* Memberi ruang agar teks tidak menempel ke pinggir */
+  }
+  
+  /* Jika ada judul di cover, kecilkan ukurannya agar pas di HP */
+  .notebook-cover h1 {
+    font-size: 2.5rem; 
+    text-align: center;
+  }
 }
+
