@@ -187,7 +187,7 @@ body {
 .polaroid-1 img {
   width: 100%;
   justify-content: center;
-  height: 100px;
+  height: 175px;
   object-fit: cover;
 }
 
