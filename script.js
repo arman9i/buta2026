@@ -230,3 +230,71 @@ ScrollReveal().reveal('.content-section', {
   origin: 'bottom',
   duration: 1000,
 });
+
+
+//EFEK TUMPUKAN FOTO PADA PAGE 12
+function openLightbox(element) {
+    const imgUrl = element.querySelector('img').src;
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.querySelector('.lightbox-img');
+    
+    lightboxImg.src = imgUrl;
+    lightbox.classList.add('active');
+}
+
+// Tambahan untuk HP: Jika layar disentuh, foto akan 'aktif'
+document.querySelectorAll('.photo-card').forEach(card => {
+    card.addEventListener('touchstart', function() {
+        // Reset z-index kartu lain
+        document.querySelectorAll('.photo-card').forEach(c => c.style.zIndex = "1");
+        // Naikkan z-index kartu yang disentuh
+        this.style.zIndex = "999";
+    });
+});
+
+document.querySelectorAll('.photo-card').forEach(card => {
+    card.addEventListener('click', function() {
+        // Hapus class 'is-active' dari semua kartu lain
+        document.querySelectorAll('.photo-card').forEach(c => c.classList.remove('is-active'));
+        
+        // Tambahkan ke kartu yang baru saja diklik
+        this.classList.add('is-active');
+    });
+});
+
+const allCards = document.querySelectorAll('.photo-card');
+
+allCards.forEach(card => {
+    card.addEventListener('click', function() {
+        // Hapus class 'is-active' dari kartu lain agar mereka kembali miring
+        allCards.forEach(c => c.classList.remove('is-active'));
+        
+        // Tambahkan class ke kartu yang diklik agar jadi tegak
+        this.classList.add('is-active');
+    });
+});
+
+// Gabungkan semua fungsi klik kartu di sini agar tidak konflik
+document.querySelectorAll('.photo-card').forEach(card => {
+    // Gunakan 'click' karena browser HP modern sudah menghandle click dengan baik
+    card.addEventListener('click', function(e) {
+        // Jika kartu sudah aktif, maka buka lightbox (fungsi ganda)
+        if (this.classList.contains('is-active')) {
+            const imgUrl = this.querySelector('img').src;
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.querySelector('.lightbox-img');
+            lightboxImg.src = imgUrl;
+            lightbox.classList.add('active');
+        } else {
+            // Jika belum aktif, buat jadi tegak lurus
+            document.querySelectorAll('.photo-card').forEach(c => c.classList.remove('is-active'));
+            this.classList.add('is-active');
+        }
+        e.stopPropagation();
+    });
+});
+
+// Klik di mana saja untuk memiringkan kembali kartu
+document.addEventListener('click', function() {
+    document.querySelectorAll('.photo-card').forEach(c => c.classList.remove('is-active'));
+});
