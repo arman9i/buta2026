@@ -1080,7 +1080,7 @@ video.modal-photo {
 .scatter-container {
     position: relative;
     width: 100%;
-    height: 750px; /* Sesuaikan tinggi halaman */
+    height: 850px; /* Sesuaikan tinggi halaman */
     overflow: hidden;
     padding: 20px;
 }
@@ -1143,14 +1143,14 @@ video.modal-photo {
 
 @media (max-width: 767px) {
     .scatter-container {
-        height: 800px; /* Tambah tinggi container agar ada ruang gerak */
+        height: 650px; /* Tambah tinggi container agar ada ruang gerak */
         position: relative;
         display: block; /* Matikan flex agar kita bisa atur posisi manual */
     }
 
     .photo-card-2 {
         position: absolute !important;
-        width: 180px; /* Ukuran tetap agar tidak terlalu besar di HP */
+        width: 170px; /* Ukuran tetap agar tidak terlalu besar di HP */
         height: auto;
         left: 50% !important;
         top: 50% !important;
@@ -1194,15 +1194,18 @@ video.modal-photo {
     }
 
     /* Saat kartu disentuh, buat ia sedikit membesar dan maju ke depan */
-     .photo-card-2.is-active {
+    .photo-card-2.is-active {
         transform: translate(-50%, -50%) rotate(0deg) scale(1.5) !important;
+        /*left: 50% !important;
+        top: 50% !important;*/
         z-index: 999 !important;
         box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     .photo-card-2 {
         transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), z-index 0s;
-    }
+    } 
    
 }
     
@@ -1214,5 +1217,6 @@ video.modal-photo {
 
     .overlay-2 p {
         font-family: Arial, sans-serif;
+        font-size: 0.9rem;
         color: rgb(255, 255, 255);
     }

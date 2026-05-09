@@ -231,6 +231,28 @@ ScrollReveal().reveal('.content-section', {
   duration: 1000,
 });
 
+function showPage(pageId) {
+    // 1. Sembunyikan semua halaman
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+        page.style.display = 'none'; // Paksa sembunyi
+    });
+
+    // 2. Tampilkan halaman tujuan
+    const activePage = document.getElementById(pageId);
+    activePage.classList.add('active');
+    activePage.style.display = 'block';
+
+    // 3. RESET: Hilangkan semua class 'is-active' agar foto miring kembali
+    // dan tidak "nyangkut" di layar saat pindah halaman
+    document.querySelectorAll('.photo-card, .photo-card-2').forEach(card => {
+        card.classList.remove('is-active');
+        card.style.zIndex = ""; // Reset z-index
+    });
+    
+    // Scroll ke atas otomatis setiap pindah halaman
+    window.scrollTo(0, 0);
+}
 
 //EFEK TUMPUKAN FOTO PADA PAGE 12
 function openLightbox(element) {
@@ -246,7 +268,7 @@ function openLightbox(element) {
 document.querySelectorAll('.photo-card-2').forEach(card => {
     card.addEventListener('touchstart', function() {
         // Reset z-index kartu lain
-        document.querySelectorAll('.photo-card').forEach(c => c.style.zIndex = "1");
+        document.querySelectorAll('.photo-card-2').forEach(c => c.style.zIndex = "1");
         // Naikkan z-index kartu yang disentuh
         this.style.zIndex = "999";
     });
@@ -261,4 +283,5 @@ document.querySelectorAll('.photo-card-2').forEach(card => {
         this.classList.add('is-active');
     });
 });
+
 
