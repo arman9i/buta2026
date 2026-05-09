@@ -1134,14 +1134,14 @@ video.modal-photo {
 
 @media (max-width: 767px) {
     .scatter-container {
-        height: 800px; /* Tambah tinggi container agar ada ruang gerak */
+        height: 750px; /* Tambah tinggi container agar ada ruang gerak */
         position: relative;
         display: block; /* Matikan flex agar kita bisa atur posisi manual */
     }
 
     .photo-card {
         position: absolute !important;
-        width: 250px; /* Ukuran tetap agar tidak terlalu besar di HP */
+        width: 200px; /* Ukuran tetap agar tidak terlalu besar di HP */
         left: 50% !important;
         top: 50% !important;
         transition: transform 0.3s ease, z-index 0s;
