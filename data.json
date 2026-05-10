@@ -35,7 +35,7 @@
     "kelas": "XII IIS-1",
     "pesan": "Roda kehidupan terus berputar, jadi tetaplah semangat dan jangan pernah menyerah!",
     "foto": "Galeri/img/Alfira Khairani.jpg",
-    "video": "Galeri/video.mp4",
+    "video": "Galeri/video/Alfira Khairani.mp4",
     "audio": "Galeri/voice/bilqis.mp3",
     "bio": "Tetap semangat dan jangan pernah menyerah dalam menghadapi tantangan. Kalian semua memiliki potensi yang luar biasa, jadi teruslah berusaha dan jangan takut untuk bermimpi besar!"
   },
@@ -131,10 +131,10 @@
   },
   {
     "id": 14,
-    "nama": "Halvel Gusali Perdana",
+    "nama": "Harvel Gusali Perdana",
     "kelas": "XII IIS-1",
     "pesan": "........",
-    "foto": "Galeri/img/Halvel Gusali Perdana.jpg",
+    "foto": "Galeri/img/Harvel Gusali Perdana.jpg",
     "video": "Galeri/video.mp4",
     "audio": "Galeri/voice/bilqis.mp3",
     "bio": "....................."
@@ -175,7 +175,7 @@
     "kelas": "XII IIS-1",
     "pesan": "........",
     "foto": "Galeri/img/Mutiara Azzahra.jpg",
-    "video": "Galeri/video.mp4",
+    "video": "Galeri/video/Mutiara Azzahra.mp4",
     "audio": "Galeri/voice/bilqis.mp3",
     "bio": "....................."
   },
