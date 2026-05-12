@@ -286,33 +286,36 @@ document.querySelectorAll('.photo-card-2').forEach(card => {
 
 
 // SETTING PEMUTAR VIDEO DI HALAMAN BEHIND THE SCENE
-const video = document.getElementById('myVideo');
-const progress = document.getElementById('progress');
-const playBtn = document.getElementById('playBtn');
-
-// Play atau Pause video
+// Fungsi Kontrol Video
 function playPause() {
+    const video = document.getElementById('myVideo');
+    const playBtn = document.getElementById('playBtn');
+
     if (video.paused) {
-        video.play();
-        playBtn.innerHTML = "⏸";
+        // Gunakan catch untuk mendeteksi jika browser memblokir video
+        video.play().then(() => {
+            playBtn.innerHTML = "⏸";
+        }).catch(error => {
+            console.error("Gagal putar video:", error);
+            // Jika gagal karena suara, coba putar dalam keadaan mute
+            video.muted = true;
+            video.play();
+            playBtn.innerHTML = "⏸ (Muted)";
+        });
     } else {
         video.pause();
         playBtn.innerHTML = "▶";
     }
 }
 
-// Update progress bar
-video.addEventListener('timeupdate', () => {
-    const percentage = (video.currentTime / video.duration) * 100;
-    progress.style.width = percentage + "%";
-});
-
-// Klik pada video untuk play/pause
-video.addEventListener('click', playPause);
-
-// Mute/Unmute
-function toggleMute() {
-    video.muted = !video.muted;
-    document.getElementById('muteBtn').innerHTML = video.muted ? "🔇" : "🔊";
+// Update progress bar saat video berjalan
+const myVideo = document.getElementById('myVideo');
+if (myVideo) {
+    myVideo.addEventListener('timeupdate', () => {
+        const progress = document.getElementById('progress');
+        if (progress) {
+            const percentage = (myVideo.currentTime / myVideo.duration) * 100;
+            progress.style.width = percentage + "%";
+        }
+    });
 }
-

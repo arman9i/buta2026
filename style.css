@@ -1226,6 +1226,10 @@ video.modal-photo {
     padding: 20px;
     text-align: center;
     margin-bottom: 50px;
+    position: relative;
+    z-index: 10000 !important; /* Sangat penting agar berada di atas foto */
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .video-container {
@@ -1256,6 +1260,9 @@ video {
     background: rgba(0,0,0,0.7);
     padding: 10px;
     gap: 10px;
+    border-radius: 0 0 10px 10px;
+    position: relative;
+    z-index: 10001; /* Pastikan tombol kontrol paling depan */
 }
 
 .video-controls button {
