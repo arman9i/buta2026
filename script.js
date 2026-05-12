@@ -285,3 +285,34 @@ document.querySelectorAll('.photo-card-2').forEach(card => {
 });
 
 
+// SETTING PEMUTAR VIDEO DI HALAMAN BEHIND THE SCENE
+const video = document.getElementById('myVideo');
+const progress = document.getElementById('progress');
+const playBtn = document.getElementById('playBtn');
+
+// Play atau Pause video
+function playPause() {
+    if (video.paused) {
+        video.play();
+        playBtn.innerHTML = "⏸";
+    } else {
+        video.pause();
+        playBtn.innerHTML = "▶";
+    }
+}
+
+// Update progress bar
+video.addEventListener('timeupdate', () => {
+    const percentage = (video.currentTime / video.duration) * 100;
+    progress.style.width = percentage + "%";
+});
+
+// Klik pada video untuk play/pause
+video.addEventListener('click', playPause);
+
+// Mute/Unmute
+function toggleMute() {
+    video.muted = !video.muted;
+    document.getElementById('muteBtn').innerHTML = video.muted ? "🔇" : "🔊";
+}
+

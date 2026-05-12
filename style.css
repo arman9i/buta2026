@@ -1220,3 +1220,63 @@ video.modal-photo {
         font-size: 0.9rem;
         color: rgb(255, 255, 255);
     }
+
+/* SETTING PEMUTAR VIDEO HAL BEHIND THE SCENE */
+.video-section {
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.video-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--paper-color);
+    padding: 15px;
+    border: 1px solid #ddd;
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.1); /* Efek bayangan kotak */
+    transform: rotate(-1deg); /* Sedikit miring agar estetik */
+}
+
+.video-wrapper {
+    position: relative;
+    background: #000;
+    line-height: 0;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.video-controls {
+    display: flex;
+    align-items: center;
+    background: rgba(0,0,0,0.7);
+    padding: 10px;
+    gap: 10px;
+}
+
+.video-controls button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.progress-bar {
+    flex-grow: 1;
+    height: 8px;
+    background: #444;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background: var(--accent);
+    transition: width 0.1s;
+}
