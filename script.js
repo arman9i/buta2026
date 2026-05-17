@@ -319,3 +319,42 @@ if (myVideo) {
         }
     });
 }
+
+// ALBUM VIDEO KENAGAN
+// Logika Kontrol Album Video
+document.querySelectorAll('.video-card').forEach(card => {
+    const videoElement = card.querySelector('.album-video');
+    const playIcon = card.querySelector('.video-overlay-play');
+
+    card.addEventListener('click', function(e) {
+        // Cari tahu apakah video ini sedang berputar
+        if (videoElement.paused) {
+            
+            // 1. HENTIKAN semua video lain yang sedang berputar di album ini
+            document.querySelectorAll('.album-video').forEach(v => {
+                v.pause();
+                // Kembalikan ikon tombol play di video lain menjadi ▶
+                const otherPlayIcon = v.closest('.video-wrapper').querySelector('.video-overlay-play');
+                if (otherPlayIcon) otherPlayIcon.innerHTML = "▶";
+                v.closest('.video-card').classList.remove('video-active');
+            });
+
+            // 2. PUTAR video yang dipilih
+            videoElement.play().then(() => {
+                playIcon.innerHTML = "⏸";
+                card.classList.add('video-active');
+            }).catch(err => {
+                console.log("Autoplay diblokir browser, memutar tanpa suara...", err);
+                videoElement.muted = true;
+                videoElement.play();
+                playIcon.innerHTML = "⏸";
+            });
+
+        } else {
+            // 3. JIKA SEDANG BERPUTAR, maka pause saat diklik kembali
+            videoElement.pause();
+            playIcon.innerHTML = "▶";
+            card.classList.remove('video-active');
+        }
+    });
+});

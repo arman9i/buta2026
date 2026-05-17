@@ -1287,3 +1287,110 @@ video {
     background: var(--accent);
     transition: width 0.1s;
 }
+
+.video-section {
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 10000 !important; /* Sangat penting agar berada di atas foto */
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* VIDEO KENAGANAN  SEKOLAH*/
+/* Kontainer Utama Album */
+.video-album-section {
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.album-title {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Sistem Grid: Otomatis menyesuaikan layar HP dan Desktop */
+.video-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 10px;
+}
+
+/* Kartu Video Scrapbook */
+.video-card {
+    background: var(--paper-color);
+    padding: 12px;
+    border: 1px solid #ddd;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.15);
+    border-radius: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efek miring acak tipis khas scrapbook saat normal */
+.video-card:nth-child(odd) { transform: rotate(-1.5deg); }
+.video-card:nth-child(even) { transform: rotate(1.5deg); }
+
+.video-wrapper {
+    position: relative;
+    background: #000;
+    overflow: hidden;
+    border-radius: 2px;
+    aspect-ratio: 16 / 9; /* Memastikan semua video memiliki rasio seragam */
+}
+
+.album-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Tombol Play Kustom di Tengah Video */
+.video-overlay-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(18, 173, 173, 0.85); /* Menggunakan --accent */
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    pointer-events: none; /* Klik akan tembus langsung ke elemen video */
+}
+
+/* Efek saat kartu diarahkan kursor atau ditekan */
+.video-card:hover, .video-card.video-active {
+    transform: rotate(0deg) scale(1.03) !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+.video-card:hover .video-overlay-play {
+    background: rgba(0, 0, 0, 0.9);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Teks Keterangan Video */
+.video-caption {
+    padding-top: 10px;
+    text-align: center;
+}
+.video-caption h3 {
+    margin: 5px 0;
+    font-size: 1.3rem;
+}
+.video-caption p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555;
+}
