@@ -232,129 +232,116 @@ ScrollReveal().reveal('.content-section', {
 });
 
 function showPage(pageId) {
-    // 1. Sembunyikan semua halaman
-    document.querySelectorAll('.page').forEach(page => {
-        page.classList.remove('active');
-        page.style.display = 'none'; // Paksa sembunyi
-    });
+  // 1. Sembunyikan semua halaman
+  document.querySelectorAll('.page').forEach((page) => {
+    page.classList.remove('active');
+    page.style.display = 'none'; // Paksa sembunyi
+  });
 
-    // 2. Tampilkan halaman tujuan
-    const activePage = document.getElementById(pageId);
-    activePage.classList.add('active');
-    activePage.style.display = 'block';
+  // 2. Tampilkan halaman tujuan
+  const activePage = document.getElementById(pageId);
+  activePage.classList.add('active');
+  activePage.style.display = 'block';
 
-    // 3. RESET: Hilangkan semua class 'is-active' agar foto miring kembali
-    // dan tidak "nyangkut" di layar saat pindah halaman
-    document.querySelectorAll('.photo-card, .photo-card-2').forEach(card => {
-        card.classList.remove('is-active');
-        card.style.zIndex = ""; // Reset z-index
-    });
-    
-    // Scroll ke atas otomatis setiap pindah halaman
-    window.scrollTo(0, 0);
+  // 3. RESET: Hilangkan semua class 'is-active' agar foto miring kembali
+  // dan tidak "nyangkut" di layar saat pindah halaman
+  document.querySelectorAll('.photo-card, .photo-card-2').forEach((card) => {
+    card.classList.remove('is-active');
+    card.style.zIndex = ''; // Reset z-index
+  });
+
+  // Scroll ke atas otomatis setiap pindah halaman
+  window.scrollTo(0, 0);
 }
 
 //EFEK TUMPUKAN FOTO PADA PAGE 12
 function openLightbox(element) {
-    const imgUrl = element.querySelector('img').src;
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.querySelector('.lightbox-img');
-    
-    lightboxImg.src = imgUrl;
-    lightbox.classList.add('active');
+  const imgUrl = element.querySelector('img').src;
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+
+  lightboxImg.src = imgUrl;
+  lightbox.classList.add('active');
 }
 
 // Tambahan untuk HP: Jika layar disentuh, foto akan 'aktif'
-document.querySelectorAll('.photo-card-2').forEach(card => {
-    card.addEventListener('touchstart', function() {
-        // Reset z-index kartu lain
-        document.querySelectorAll('.photo-card-2').forEach(c => c.style.zIndex = "1");
-        // Naikkan z-index kartu yang disentuh
-        this.style.zIndex = "999";
-    });
+document.querySelectorAll('.photo-card-2').forEach((card) => {
+  card.addEventListener('touchstart', function () {
+    // Reset z-index kartu lain
+    document
+      .querySelectorAll('.photo-card-2')
+      .forEach((c) => (c.style.zIndex = '1'));
+    // Naikkan z-index kartu yang disentuh
+    this.style.zIndex = '999';
+  });
 });
 
-document.querySelectorAll('.photo-card-2').forEach(card => {
-    card.addEventListener('click', function() {
-        // Hapus class 'is-active' dari semua kartu lain
-        document.querySelectorAll('.photo-card-2').forEach(c => c.classList.remove('is-active'));
-        
-        // Tambahkan ke kartu yang baru saja diklik
-        this.classList.add('is-active');
-    });
+document.querySelectorAll('.photo-card-2').forEach((card) => {
+  card.addEventListener('click', function () {
+    // Hapus class 'is-active' dari semua kartu lain
+    document
+      .querySelectorAll('.photo-card-2')
+      .forEach((c) => c.classList.remove('is-active'));
+
+    // Tambahkan ke kartu yang baru saja diklik
+    this.classList.add('is-active');
+  });
 });
 
-
-// SETTING PEMUTAR VIDEO DI HALAMAN BEHIND THE SCENE
-// Fungsi Kontrol Video
+// ==========================================
+// FUNGSI KONTROL VIDEO (PAGE 12)
+// ==========================================
 function playPause() {
-    const video = document.getElementById('myVideo');
-    const playBtn = document.getElementById('playBtn');
+  const video = document.getElementById('myVideo');
+  const playBtn = document.getElementById('playBtn');
 
-    if (video.paused) {
-        // Gunakan catch untuk mendeteksi jika browser memblokir video
-        video.play().then(() => {
-            playBtn.innerHTML = "⏸";
-        }).catch(error => {
-            console.error("Gagal putar video:", error);
-            // Jika gagal karena suara, coba putar dalam keadaan mute
-            video.muted = true;
-            video.play();
-            playBtn.innerHTML = "⏸ (Muted)";
-        });
-    } else {
-        video.pause();
-        playBtn.innerHTML = "▶";
+  if (!video) return;
+
+  if (video.paused) {
+    // Menggunakan Promise untuk mendeteksi pemblokiran browser
+    video
+      .play()
+      .then(() => {
+        playBtn.innerHTML = '⏸';
+      })
+      .catch((error) => {
+        console.log(
+          'Pemutaran bersuara diblokir browser, mencoba mode bisu...',
+          error
+        );
+        // Jika diblokir karena aturan privasi browser, putar otomatis lewat mode Mute (Bisu)
+        video.muted = true;
+        video.play();
+        playBtn.innerHTML = '⏸ Muted';
+      });
+  } else {
+    video.pause();
+    playBtn.innerHTML = '▶';
+  }
+}
+
+// Pasang event listener khusus agar klik video tidak terganggu fungsi foto
+const mainVideo = document.getElementById('myVideo');
+if (mainVideo) {
+  mainVideo.addEventListener('click', function (e) {
+    e.stopPropagation(); // Stop agar klik tidak dianggap mengklik kartu foto
+    playPause();
+  });
+
+  mainVideo.addEventListener('timeupdate', function () {
+    const progress = document.getElementById('progress');
+    if (progress) {
+      const percentage = (mainVideo.currentTime / mainVideo.duration) * 100;
+      progress.style.width = percentage + '%';
     }
+  });
 }
 
-// Update progress bar saat video berjalan
-const myVideo = document.getElementById('myVideo');
-if (myVideo) {
-    myVideo.addEventListener('timeupdate', () => {
-        const progress = document.getElementById('progress');
-        if (progress) {
-            const percentage = (myVideo.currentTime / myVideo.duration) * 100;
-            progress.style.width = percentage + "%";
-        }
-    });
+// Pasang event listener pada tombol kontrol
+const playButtonElement = document.getElementById('playBtn');
+if (playButtonElement) {
+  playButtonElement.addEventListener('click', function (e) {
+    e.stopPropagation(); // Mencegah bentrok klik
+    playPause();
+  });
 }
-
-// ALBUM VIDEO KENAGAN
-// Logika Kontrol Album Video
-document.querySelectorAll('.video-card').forEach(card => {
-    const videoElement = card.querySelector('.album-video');
-    const playIcon = card.querySelector('.video-overlay-play');
-
-    card.addEventListener('click', function(e) {
-        // Cari tahu apakah video ini sedang berputar
-        if (videoElement.paused) {
-            
-            // 1. HENTIKAN semua video lain yang sedang berputar di album ini
-            document.querySelectorAll('.album-video').forEach(v => {
-                v.pause();
-                // Kembalikan ikon tombol play di video lain menjadi ▶
-                const otherPlayIcon = v.closest('.video-wrapper').querySelector('.video-overlay-play');
-                if (otherPlayIcon) otherPlayIcon.innerHTML = "▶";
-                v.closest('.video-card').classList.remove('video-active');
-            });
-
-            // 2. PUTAR video yang dipilih
-            videoElement.play().then(() => {
-                playIcon.innerHTML = "⏸";
-                card.classList.add('video-active');
-            }).catch(err => {
-                console.log("Autoplay diblokir browser, memutar tanpa suara...", err);
-                videoElement.muted = true;
-                videoElement.play();
-                playIcon.innerHTML = "⏸";
-            });
-
-        } else {
-            // 3. JIKA SEDANG BERPUTAR, maka pause saat diklik kembali
-            videoElement.pause();
-            playIcon.innerHTML = "▶";
-            card.classList.remove('video-active');
-        }
-    });
-});
