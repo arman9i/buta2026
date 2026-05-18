@@ -289,7 +289,7 @@ document.querySelectorAll('.photo-card-2').forEach((card) => {
 });
 
 // ==========================================
-// FUNGSI KONTROL VIDEO (PAGE 12)
+// FUNGSI KONTROL VIDEO (PAGE 12) - FIXED
 // ==========================================
 function playPause() {
   const video = document.getElementById('myVideo');
@@ -305,7 +305,7 @@ function playPause() {
       })
       .catch((error) => {
         console.log('Pemutaran bersuara diblokir browser, mencoba mode bisu...', error);
-        // Jika diblokir kebijakan privasi browser, putar otomatis lewat mode Mute (Bisu)
+        // Jika diblokir aturan privasi browser HP, putar otomatis lewat mode Mute (Bisu)
         video.muted = true;
         video.play();
         playBtn.innerHTML = '⏸ Muted';
@@ -316,11 +316,11 @@ function playPause() {
   }
 }
 
-// Pasang event listener khusus agar klik video tidak terganggu fungsi foto miring
+// Pasang event listener ketat pada area Video
 const mainVideo = document.getElementById('myVideo');
 if (mainVideo) {
   mainVideo.addEventListener('click', function (e) {
-    e.stopPropagation(); // Stop klik agar tidak dianggap klik kartu foto!
+    e.stopPropagation(); // Mencegah klik menembus ke latar belakang / foto miring!
     playPause();
   });
 
@@ -333,11 +333,12 @@ if (mainVideo) {
   });
 }
 
-// Pasang event listener pada tombol kontrol
+// Pasang event listener ketat pada Tombol Play di bawah video
 const playButtonElement = document.getElementById('playBtn');
 if (playButtonElement) {
   playButtonElement.addEventListener('click', function (e) {
-    e.stopPropagation(); // Mencegah bentrok klik
+    e.preventDefault();
+    e.stopPropagation(); // MEMAKSA browser hanya fokus mengeksekusi video
     playPause();
   });
 }

@@ -1301,6 +1301,8 @@ video.modal-photo {
   overflow: hidden;
   border-radius: 2px;
   aspect-ratio: 16 / 9; /* Memastikan semua video memiliki rasio seragam */
+  z-index: 100000 !important; /* Pastikan video berada di lapisan paling depan */
+  pointer-events: auto !important; /* Pastikan video tetap bisa diklik/touch */
 }
 
 .album-video {
@@ -1358,28 +1360,34 @@ video.modal-photo {
 
 /* Pastikan area video berada di lapisan paling depan */
 .video-section {
-    position: relative !important;
-    z-index: 99999 !important; /* Menaikkan lapisan video di atas semua foto miring */
-    margin-top: 40px;
-    margin-bottom: 40px;
+  position: relative !important;
+  z-index: 99999 !important; /* Angka super besar agar menang dari photo-card-2 */
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.video-container {
+  position: relative !important;
+  z-index: 100000 !important;
 }
 
 /* Pastikan kontroler video tidak tertutup elemen lain */
 .video-controls {
-    display: flex;
-    align-items: center;
-    background: rgba(0,0,0,0.8);
-    padding: 10px;
-    position: relative !important;
-    z-index: 100000 !important;
+  display: flex;
+  align-items: center;
+  background: rgba(0,0,0,0.8);
+  padding: 10px;
+  position: relative !important;
+  z-index: 100001 !important;
 }
 
 .video-controls button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
-    position: relative !important;
-    z-index: 100002 !important;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: relative !important;
+  z-index: 100002 !important;
+  padding: 5px 15px;
 }
