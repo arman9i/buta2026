@@ -264,32 +264,53 @@ function openLightbox(element) {
   lightbox.classList.add('active');
 }
 
-// Tambahan untuk HP: Jika layar disentuh, foto akan 'aktif'
-document.querySelectorAll('.photo-card-2').forEach((card) => {
-  card.addEventListener('touchstart', function () {
-    // Reset z-index kartu lain
-    document
-      .querySelectorAll('.photo-card-2')
-      .forEach((c) => (c.style.zIndex = '1'));
-    // Naikkan z-index kartu yang disentuh
-    this.style.zIndex = '999';
-  });
-});
+// ==========================================
+// FIX INTERAKSI FOTO PAGE 12 & PROTEKSI KLIK
+// ==========================================
+const cardsPage12 = document.querySelectorAll('.photo-card-2');
 
-document.querySelectorAll('.photo-card-2').forEach((card) => {
-  card.addEventListener('click', function () {
-    // Hapus class 'is-active' dari semua kartu lain
-    document
-      .querySelectorAll('.photo-card-2')
-      .forEach((c) => c.classList.remove('is-active'));
+if (cardsPage12.length > 0) {
+  cardsPage12.forEach((card) => {
+    // Dukungan untuk HP (Sentuhan pertama)
+    card.addEventListener('touchstart', function () {
+      cardsPage12.forEach((c) => (c.style.zIndex = '1'));
+      this.style.zIndex = '999';
+    });
 
-    // Tambahkan ke kartu yang baru saja diklik
-    this.classList.add('is-active');
+    // Logika Klik Kartu Foto
+    card.addEventListener('click', function (e) {
+      e.stopPropagation(); // Stop agar klik tidak menembus ke latar belakang
+
+      if (this.classList.contains('is-active')) {
+        // Jika sudah tegak dan diklik lagi, buka gambar besar (Lightbox)
+        openLightbox(this);
+      } else {
+        // Klik pertama: bersihkan kartu lain, lalu buat kartu ini tegak
+        cardsPage12.forEach((c) => c.classList.remove('is-active'));
+        this.classList.add('is-active');
+      }
+    });
   });
+}
+
+// Klik di mana saja pada layar untuk me-reset kartu miring,
+// KECUALI jika yang diklik adalah area pemutar video atau tombolnya!
+document.addEventListener('click', function (e) {
+  if (
+    e.target.closest('.video-section') ||
+    e.target.closest('#myVideo') ||
+    e.target.closest('#playBtn')
+  ) {
+    return; // Abaikan fungsi reset jika user sedang mengklik video
+  }
+
+  if (cardsPage12.length > 0) {
+    cardsPage12.forEach((c) => c.classList.remove('is-active'));
+  }
 });
 
 // ==========================================
-// FUNGSI KONTROL VIDEO (PAGE 12) - FIXED
+// FUNGSI KONTROL VIDEO (PAGE 12) - FIXED & AMAN
 // ==========================================
 function playPause() {
   const video = document.getElementById('myVideo');
@@ -304,7 +325,10 @@ function playPause() {
         playBtn.innerHTML = '⏸';
       })
       .catch((error) => {
-        console.log('Pemutaran bersuara diblokir browser, mencoba mode bisu...', error);
+        console.log(
+          'Pemutaran bersuara diblokir browser, mencoba mode mute...',
+          error
+        );
         // Jika diblokir aturan privasi browser HP, putar otomatis lewat mode Mute (Bisu)
         video.muted = true;
         video.play();
@@ -316,11 +340,12 @@ function playPause() {
   }
 }
 
-// Pasang event listener ketat pada area Video
+// Pasang event listener ketat pada area layar video
 const mainVideo = document.getElementById('myVideo');
 if (mainVideo) {
   mainVideo.addEventListener('click', function (e) {
-    e.stopPropagation(); // Mencegah klik menembus ke latar belakang / foto miring!
+    e.preventDefault();
+    e.stopPropagation(); // Mengunci klik agar tidak bertabrakan dengan sistem scrapbook
     playPause();
   });
 
@@ -333,12 +358,12 @@ if (mainVideo) {
   });
 }
 
-// Pasang event listener ketat pada Tombol Play di bawah video
+// Pasang event listener ketat pada tombol fisik Play (▶)
 const playButtonElement = document.getElementById('playBtn');
 if (playButtonElement) {
   playButtonElement.addEventListener('click', function (e) {
     e.preventDefault();
-    e.stopPropagation(); // MEMAKSA browser hanya fokus mengeksekusi video
+    e.stopPropagation(); // Mencegah klik menyebar ke background penutup
     playPause();
   });
 }
