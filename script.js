@@ -298,18 +298,14 @@ function playPause() {
   if (!video) return;
 
   if (video.paused) {
-    // Menggunakan Promise untuk mendeteksi pemblokiran browser
     video
       .play()
       .then(() => {
         playBtn.innerHTML = '⏸';
       })
       .catch((error) => {
-        console.log(
-          'Pemutaran bersuara diblokir browser, mencoba mode bisu...',
-          error
-        );
-        // Jika diblokir karena aturan privasi browser, putar otomatis lewat mode Mute (Bisu)
+        console.log('Pemutaran bersuara diblokir browser, mencoba mode bisu...', error);
+        // Jika diblokir kebijakan privasi browser, putar otomatis lewat mode Mute (Bisu)
         video.muted = true;
         video.play();
         playBtn.innerHTML = '⏸ Muted';
@@ -320,11 +316,11 @@ function playPause() {
   }
 }
 
-// Pasang event listener khusus agar klik video tidak terganggu fungsi foto
+// Pasang event listener khusus agar klik video tidak terganggu fungsi foto miring
 const mainVideo = document.getElementById('myVideo');
 if (mainVideo) {
   mainVideo.addEventListener('click', function (e) {
-    e.stopPropagation(); // Stop agar klik tidak dianggap mengklik kartu foto
+    e.stopPropagation(); // Stop klik agar tidak dianggap klik kartu foto!
     playPause();
   });
 
