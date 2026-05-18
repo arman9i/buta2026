@@ -106,6 +106,7 @@ function nextPage(pageNum) {
     document
       .querySelectorAll('.page')
       .forEach((p) => p.classList.remove('active'));
+
     document.getElementById('page' + pageNum).classList.add('active');
     wrapper.style.opacity = '1';
     window.scrollTo(0, 0);
@@ -224,31 +225,38 @@ document.querySelectorAll('.nav-links a').forEach((anchor) => {
 });
 
 // Animasi untuk Section Cerita dan Profil
-ScrollReveal().reveal('.content-section', {
-  delay: 300,
-  distance: '60px',
-  origin: 'bottom',
-  duration: 1000,
-});
+//ScrollReveal().reveal('.content-section', {
+//  delay: 300,
+//  distance: '60px',
+//  origin: 'bottom',
+//  duration: 1000,
+//});
 
 function showPage(pageId) {
-  // 1. Sembunyikan semua halaman
+  // 1. Sembunyikan semua halaman dengan menghapus class active
   document.querySelectorAll('.page').forEach((page) => {
     page.classList.remove('active');
-    page.style.display = 'none'; // Paksa sembunyi
+    // HAPUS atau komentari baris page.style.display = 'none' jika ada
   });
 
-  // 2. Tampilkan halaman tujuan
+  // 2. Tampilkan halaman tujuan dengan memberikan class active
   const activePage = document.getElementById(pageId);
-  activePage.classList.add('active');
-  activePage.style.display = 'block';
+  if (activePage) {
+    activePage.classList.add('active');
+    // HAPUS atau komentari baris activePage.style.display = 'block' jika ada
+  }
 
   // 3. RESET: Hilangkan semua class 'is-active' agar foto miring kembali
-  // dan tidak "nyangkut" di layar saat pindah halaman
   document.querySelectorAll('.photo-card, .photo-card-2').forEach((card) => {
     card.classList.remove('is-active');
-    card.style.zIndex = ''; // Reset z-index
+    card.style.zIndex = '';
   });
+
+  // Ambil video di halaman jika ada, lakukan reload agar browser memicu ulang rendering video
+  const videoEle = document.getElementById('myVideo');
+  if (videoEle) {
+    videoEle.load(); // Memaksa browser menyegarkan instansi video yang sempat tersembunyi
+  }
 
   // Scroll ke atas otomatis setiap pindah halaman
   window.scrollTo(0, 0);
@@ -309,61 +317,39 @@ document.addEventListener('click', function (e) {
   }
 });
 
-// ==========================================
-// FUNGSI KONTROL VIDEO (PAGE 12) - FIXED & AMAN
-// ==========================================
-function playPause() {
-  const video = document.getElementById('myVideo');
-  const playBtn = document.getElementById('playBtn');
+// ==============================
+// FUNGSI KONTROL VIDEO (PAGE 11)
+// ==============================
+const videoItems = document.querySelectorAll('.video-item');
+const videoPlayer = document.getElementById('videoPlayer');
+const videoTitle = document.getElementById('videoTitle');
 
-  if (!video) return;
+videoItems.forEach((item) => {
+  item.addEventListener('click', function () {
+    // hapus active
+    videoItems.forEach((el) => {
+      el.classList.remove('active');
+    });
 
-  if (video.paused) {
-    video
-      .play()
-      .then(() => {
-        playBtn.innerHTML = '⏸';
-      })
-      .catch((error) => {
-        console.log(
-          'Pemutaran bersuara diblokir browser, mencoba mode mute...',
-          error
-        );
-        // Jika diblokir aturan privasi browser HP, putar otomatis lewat mode Mute (Bisu)
-        video.muted = true;
-        video.play();
-        playBtn.innerHTML = '⏸ Muted';
-      });
-  } else {
-    video.pause();
-    playBtn.innerHTML = '▶';
-  }
-}
+    // active baru
+    this.classList.add('active');
 
-// Pasang event listener ketat pada area layar video
-const mainVideo = document.getElementById('myVideo');
-if (mainVideo) {
-  mainVideo.addEventListener('click', function (e) {
-    e.preventDefault();
-    e.stopPropagation(); // Mengunci klik agar tidak bertabrakan dengan sistem scrapbook
-    playPause();
+    // ambil data
+    const videoSrc = this.dataset.video;
+    const title = this.dataset.title;
+
+    console.log(videoSrc);
+
+    // ganti video utama
+    videoPlayer.src = videoSrc;
+
+    // reload
+    videoPlayer.load();
+
+    // play
+    videoPlayer.play();
+
+    // update title
+    videoTitle.textContent = title;
   });
-
-  mainVideo.addEventListener('timeupdate', function () {
-    const progress = document.getElementById('progress');
-    if (progress) {
-      const percentage = (mainVideo.currentTime / mainVideo.duration) * 100;
-      progress.style.width = percentage + '%';
-    }
-  });
-}
-
-// Pasang event listener ketat pada tombol fisik Play (▶)
-const playButtonElement = document.getElementById('playBtn');
-if (playButtonElement) {
-  playButtonElement.addEventListener('click', function (e) {
-    e.preventDefault();
-    e.stopPropagation(); // Mencegah klik menyebar ke background penutup
-    playPause();
-  });
-}
+});

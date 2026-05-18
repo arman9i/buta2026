@@ -1392,75 +1392,54 @@
             <button class="btn-scrap" onclick="nextPage(10)">← Persembahan Kami</button>
             <button class="btn-scrap" onclick="nextPage(12)"> Tanda Kita →</button>
         </header>
-          <h2 class="page-title" style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: xx-large; text-align: center; color: yellow;">📸 Behind The Scene</h2>
-            <div class="momen-item">
-              <div class="bts-gallery">
-                <div class="polaroid">
-                  <img src="Galeri/Kartun-1.png" alt="Bersama" />
-                  <p>Menjadi kenangan tak terlupakan</p>
-                </div>
-                <div class="polaroid">
-                  <img src="Galeri/cover.jpg" alt="BTS 2" />
-                  <p>Momen Seru 2</p>
-                </div>
-                <div class="polaroid">
-                  <img src="Galeri/Cover_buku.jpg" alt="BTS 3" />
-                  <p>Momen Seru 3</p>
-                </div>
-                <div class="polaroid">
-                  <img src="Galeri/img/kelas-20.jpg" alt="BTS 3" />
-                  <p>Mungkin tak kita dapatkan lagi kebersamaan seperti ini dalam waktu yang akan datang. kita mungkin tak akan pernah melihat kebersamaan seperti ini lagi. momen yang tak terlupakan. sedih terasa meninggalkan kemangan ini</p>
-                </div>
+          <h2 class="album-title" style="font-family: 'Dancing Script';font-size: 2.7rem; text-align: center; color: yellow;">🎬 Galeri Video Kenangan</h2>
+             
+          <div class="container-video">
+
+              <div class="main-video">
+                  <video id="videoPlayer" controls autoplay muted playsinline></video>
+
+                  <h3 id="videoTitle">Kenangan dalam Video</h3>
               </div>
-            </div>  
 
-            <div class="video-album-section">
-            <h2 class="album-title">Galeri Video Kenangan</h2>
-            
-            <div class="video-grid-container">
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <video id="myVideo" poster="Galeri/poster-video.jpg" playsinline>
-                            <source src="Galeri/video/Adzra.mp4" type="video/mp4">
-                            Browser Anda tidak mendukung tag video.
-                        </video>
-                        <div class="video-overlay-play">▶</div>
-                    </div>
-                    <div class="video-caption">
-                        <h3>Video Foto Ijazah Kita</h3>
-                        <p>Ketika kita melakukan sesi foto untuk Ujian TKA dan Asesmen Akhir Sekolah dan untuk Ijazah</p>
-                    </div>
-                </div>
+              <div class="video-list">
 
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <video id="myVideo" poster="Galeri/poster-video.jpg" playsinline>
-                            <source src="Galeri/video/Alfira.mp4" type="video/mp4">
-                            Browser Anda tidak mendukung tag video.
-                        </video>
-                        <div class="video-overlay-play">▶</div>
-                    </div>
-                    <div class="video-caption">
-                        <h3>Kilas Balik Kelas X</h3>
-                        <p>Kita memperoleh banyak kenangan indah di kelas X.</p>
-                    </div>
-                </div>
+                  <div class="video-item"
+                      data-video="Galeri/video/video-1.mp4"
+                      data-title="Kenangan 1">
+                    
+                      <img src="Galeri/img/1.jpg"> 
+                      <p style="color: white; text-align: center; margin-bottom: 10px;">Video Kenangan 1</p>
+                  </div>
 
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <video id="myVideo" poster="Galeri/poster-video.jpg" playsinline>
-                            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                            Browser Anda tidak mendukung tag video.
-                        </video>
-                        <div class="video-overlay-play">▶</div>
-                    </div>
-                    <div class="video-caption">
-                        <h3>Proses Syuting Film</h3>
-                        <p>Di balik layar pembuatan proyek sinematografi.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+                  <div class="video-item"
+                      data-video="Galeri/video/Animasi-XII-IIS-1.mp4"
+                      data-title="Kenangan 2">
+
+                      <img src="Galeri/img/2.jpg">
+                      <p style="color: white; text-align: center; margin-bottom: 10px;">Video Kenangan 2</p>
+                  </div>
+
+                  <div class="video-item"
+                      data-video="Galeri/video/Dava.mp4"
+                      data-title="Kenangan 3">
+
+                      <img src="Galeri/img/3.jpg">
+                      <p style="color: white; text-align: center; margin-bottom: 10px;">Video Kenangan 3</p>
+                  </div>
+
+                  <div class="video-item"
+                      data-video="Galeri/video/Alfira.mp4"
+                      data-title="Kenangan 4">
+
+                      <img src="Galeri/img/kelas-1.jpg">
+                      <p style="color: white; text-align: center; margin-bottom: 10px;">Video Kenangan 4</p>
+                  </div>
+
+              </div>
+          </div>
+
+
         
 
       </section>
@@ -1770,6 +1749,7 @@
       </div>
     </div>
 
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="script.js"></script>
   </body>
 </html>

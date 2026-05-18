@@ -24,7 +24,7 @@ body {
   text-align: left;
 }
 
-.active {
+.page.active {
   display: block;
 }
 
@@ -1254,140 +1254,66 @@ video.modal-photo {
 
 /* VIDEO KENAGANAN  SEKOLAH PAGE-12*/
 /* Kontainer Utama Album */
-.video-album-section {
-  padding: 20px;
-  margin-bottom: 40px;
+.container-video {
+  max-width: 1100px;
+  margin: auto;
 }
 
-.album-title {
+h1 {
   text-align: center;
-  font-family: 'Dancing Script', cursive;
-  font-size: 2.5rem;
   margin-bottom: 30px;
+  font-size: 36px;
 }
 
-/* Sistem Grid: Otomatis menyesuaikan layar HP dan Desktop */
-.video-grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  padding: 10px;
+.main-video {
+  background: #6b6b6b;
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 20px rgba(101, 101, 101, 0.3);
 }
 
-/* Kartu Video Scrapbook */
-.video-card {
-  background: var(--paper-color);
-  padding: 12px;
-  border: 1px solid #ddd;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-/* Efek miring acak tipis khas scrapbook saat normal */
-.video-card:nth-child(odd) {
-  transform: rotate(-1.5deg);
-}
-.video-card:nth-child(even) {
-  transform: rotate(1.5deg);
-}
-
-.video-wrapper {
-  position: relative;
-  background: #000;
-  overflow: hidden;
-  border-radius: 2px;
-  aspect-ratio: 16 / 9; /* Memastikan semua video memiliki rasio seragam */
-  z-index: 100000 !important; /* Pastikan video berada di lapisan paling depan */
-  pointer-events: auto !important; /* Pastikan video tetap bisa diklik/touch */
-}
-
-.album-video {
+.main-video video {
   width: 100%;
-  height: 100%;
+  border-radius: 10px;
+}
+
+.main-video h3 {
+  margin-top: 15px;
+  font-size: 24px;
+}
+
+.video-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.video-item {
+  background: #605d5c;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 2px solid transparent;
+}
+
+.video-item:hover {
+  transform: translateY(-5px);
+  border-color: #c6ad0e;
+}
+
+.video-item.active {
+  border: 3px solid #cfa808;
+}
+
+.video-item img {
+  width: 100%;
+  height: 160px;
   object-fit: cover;
 }
 
-/* Tombol Play Kustom di Tengah Video */
-.video-overlay-play {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(18, 173, 173, 0.85); /* Menggunakan --accent */
-  color: white;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  transition: all 0.3s ease;
-  pointer-events: none; /* Klik akan tembus langsung ke elemen video */
-}
-
-/* Efek saat kartu diarahkan kursor atau ditekan */
-.video-card:hover,
-.video-card.video-active {
-  transform: rotate(0deg) scale(1.03) !important;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  z-index: 10;
-}
-
-.video-card:hover .video-overlay-play {
-  background: rgba(0, 0, 0, 0.9);
-  transform: translate(-50%, -50%) scale(1.1);
-}
-
-/* Teks Keterangan Video */
-.video-caption {
-  padding-top: 10px;
-  text-align: center;
-}
-.video-caption h3 {
-  margin: 5px 0;
-  font-size: 1.3rem;
-}
-.video-caption p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: #555;
-}
-
-/* Pastikan area video berada di lapisan paling depan */
-.video-section {
-  position: relative !important;
-  z-index: 99999 !important; /* Angka super besar agar menang dari photo-card-2 */
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-
-.video-container {
-  position: relative !important;
-  z-index: 100000 !important;
-}
-
-/* Pastikan kontroler video tidak tertutup elemen lain */
-.video-controls {
-  display: flex;
-  align-items: center;
-  background: rgba(0,0,0,0.8);
-  padding: 10px;
-  position: relative !important;
-  z-index: 100001 !important;
-}
-
-.video-controls button {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.2rem;
-  cursor: pointer;
-  position: relative !important;
-  z-index: 100002 !important;
-  padding: 5px 15px;
+.video-item p {
+  padding: 12px;
+  font-size: 16px;
 }
