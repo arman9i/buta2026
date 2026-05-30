@@ -556,7 +556,7 @@ audio::-webkit-media-controls-enclosure {
 }
 
 .marker .label {
-  background: rgba(18, 173, 173, 0.9);
+  background: rgba(5, 66, 140, 0.954);
   color: white;
   font-size: 10px;
   padding: 2px 5px;
@@ -567,19 +567,39 @@ audio::-webkit-media-controls-enclosure {
 /* Atur Posisi Marker (Sesuaikan dengan gambar denahmu) */
 .kantin-1 {
   top: 80%;
-  left: 90%;
+  left: 88%;
 }
 .kantin-2 {
   top: 15%;
   left: 1%;
 }
 .lapangan {
-  top: 40%;
+  top: 35%;
   left: 50%;
 }
 .perpus {
-  top: 75%;
-  left: 10%;
+  top: 70%;
+  left: 12%;
+}
+
+.musholla {
+  top: 35%;
+  left: 12%;
+}
+
+.pos-jaga {
+  top: 80%;
+  left: 65%;
+}
+
+.BK {
+  top: 7%;
+  left: 52%;
+}
+
+.kamar-mandi {
+  top: 7%;
+  left: 90%;
 }
 
 .modal-photo {
