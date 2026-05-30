@@ -566,11 +566,11 @@ audio::-webkit-media-controls-enclosure {
 
 /* Atur Posisi Marker (Sesuaikan dengan gambar denahmu) */
 .kantin-1 {
-  top: 80%;
-  left: 88%;
+  top: 69%;
+  left: 84%;
 }
 .kantin-2 {
-  top: 15%;
+  top: 18%;
   left: 1%;
 }
 .lapangan {
@@ -578,28 +578,28 @@ audio::-webkit-media-controls-enclosure {
   left: 50%;
 }
 .perpus {
-  top: 70%;
-  left: 12%;
+  top: 63%;
+  left: 17%;
 }
 
 .musholla {
-  top: 35%;
-  left: 12%;
+  top: 39%;
+  left: 17%;
 }
 
 .pos-jaga {
-  top: 80%;
-  left: 65%;
+  top: 85%;
+  left: 60%;
 }
 
 .BK {
-  top: 7%;
+  top: 9%;
   left: 52%;
 }
 
 .kamar-mandi {
-  top: 7%;
-  left: 90%;
+  top: 12%;
+  left: 85%;
 }
 
 .modal-photo {
